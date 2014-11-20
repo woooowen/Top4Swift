@@ -12,6 +12,13 @@
 		1A7C4AEB1A1E0BB800104563 /* darenPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C4AEA1A1E0BB800104563 /* darenPool.swift */; };
 		1A7C4AED1A1E0C4500104563 /* reviewPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C4AEC1A1E0C4500104563 /* reviewPool.swift */; };
 		1A7C4AEF1A1E0C7200104563 /* onlinePool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C4AEE1A1E0C7200104563 /* onlinePool.swift */; };
+		1A7C4AF81A1E112900104563 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A7C4AF11A1E112900104563 /* arrow@2x.png */; };
+		1A7C4AF91A1E112900104563 /* Refresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C4AF21A1E112900104563 /* Refresh.swift */; };
+		1A7C4AFA1A1E112900104563 /* RefreshBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C4AF31A1E112900104563 /* RefreshBaseView.swift */; };
+		1A7C4AFB1A1E112900104563 /* RefreshConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C4AF41A1E112900104563 /* RefreshConst.swift */; };
+		1A7C4AFC1A1E112900104563 /* RefreshFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C4AF51A1E112900104563 /* RefreshFooterView.swift */; };
+		1A7C4AFD1A1E112900104563 /* RefreshHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C4AF61A1E112900104563 /* RefreshHeaderView.swift */; };
+		1A7C4AFE1A1E112900104563 /* UIScrollView+Refresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C4AF71A1E112900104563 /* UIScrollView+Refresh.swift */; };
 		1AEAB75C1A1B65B400D13AD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEAB75B1A1B65B400D13AD6 /* AppDelegate.swift */; };
 		1AEAB75E1A1B65B400D13AD6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEAB75D1A1B65B400D13AD6 /* ViewController.swift */; };
 		1AEAB7611A1B65B400D13AD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AEAB75F1A1B65B400D13AD6 /* Main.storyboard */; };
@@ -37,6 +44,13 @@
 		1A7C4AEA1A1E0BB800104563 /* darenPool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = darenPool.swift; sourceTree = "<group>"; };
 		1A7C4AEC1A1E0C4500104563 /* reviewPool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = reviewPool.swift; sourceTree = "<group>"; };
 		1A7C4AEE1A1E0C7200104563 /* onlinePool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = onlinePool.swift; sourceTree = "<group>"; };
+		1A7C4AF11A1E112900104563 /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
+		1A7C4AF21A1E112900104563 /* Refresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Refresh.swift; sourceTree = "<group>"; };
+		1A7C4AF31A1E112900104563 /* RefreshBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshBaseView.swift; sourceTree = "<group>"; };
+		1A7C4AF41A1E112900104563 /* RefreshConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshConst.swift; sourceTree = "<group>"; };
+		1A7C4AF51A1E112900104563 /* RefreshFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshFooterView.swift; sourceTree = "<group>"; };
+		1A7C4AF61A1E112900104563 /* RefreshHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshHeaderView.swift; sourceTree = "<group>"; };
+		1A7C4AF71A1E112900104563 /* UIScrollView+Refresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Refresh.swift"; sourceTree = "<group>"; };
 		1AEAB7561A1B65B400D13AD6 /* Top4Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Top4Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AEAB75A1A1B65B400D13AD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AEAB75B1A1B65B400D13AD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +82,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A7C4AF01A1E112900104563 /* Refresh */ = {
+			isa = PBXGroup;
+			children = (
+				1A7C4AF11A1E112900104563 /* arrow@2x.png */,
+				1A7C4AF21A1E112900104563 /* Refresh.swift */,
+				1A7C4AF31A1E112900104563 /* RefreshBaseView.swift */,
+				1A7C4AF41A1E112900104563 /* RefreshConst.swift */,
+				1A7C4AF51A1E112900104563 /* RefreshFooterView.swift */,
+				1A7C4AF61A1E112900104563 /* RefreshHeaderView.swift */,
+				1A7C4AF71A1E112900104563 /* UIScrollView+Refresh.swift */,
+			);
+			path = Refresh;
+			sourceTree = "<group>";
+		};
 		1AEAB74D1A1B65B400D13AD6 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +117,7 @@
 		1AEAB7581A1B65B400D13AD6 /* Top4Swift */ = {
 			isa = PBXGroup;
 			children = (
+				1A7C4AF01A1E112900104563 /* Refresh */,
 				1AEAB75B1A1B65B400D13AD6 /* AppDelegate.swift */,
 				1AEAB75D1A1B65B400D13AD6 /* ViewController.swift */,
 				1AEAB75F1A1B65B400D13AD6 /* Main.storyboard */,
@@ -210,6 +239,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A7C4AF81A1E112900104563 /* arrow@2x.png in Resources */,
 				1AEAB7611A1B65B400D13AD6 /* Main.storyboard in Resources */,
 				1AEAB7661A1B65B400D13AD6 /* LaunchScreen.xib in Resources */,
 				1AEAB7631A1B65B400D13AD6 /* Images.xcassets in Resources */,
@@ -230,10 +260,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A7C4AFB1A1E112900104563 /* RefreshConst.swift in Sources */,
+				1A7C4AFD1A1E112900104563 /* RefreshHeaderView.swift in Sources */,
+				1A7C4AF91A1E112900104563 /* Refresh.swift in Sources */,
 				1AEAB75E1A1B65B400D13AD6 /* ViewController.swift in Sources */,
+				1A7C4AFC1A1E112900104563 /* RefreshFooterView.swift in Sources */,
 				1A7C4AE71A1E036200104563 /* LoginController.swift in Sources */,
+				1A7C4AFA1A1E112900104563 /* RefreshBaseView.swift in Sources */,
 				1A7C4AEF1A1E0C7200104563 /* onlinePool.swift in Sources */,
 				1AEAB75C1A1B65B400D13AD6 /* AppDelegate.swift in Sources */,
+				1A7C4AFE1A1E112900104563 /* UIScrollView+Refresh.swift in Sources */,
 				1A7C4AE91A1E0B4100104563 /* normalPool.swift in Sources */,
 				1AEAB77C1A1B660400D13AD6 /* HttpController.swift in Sources */,
 				1A7C4AED1A1E0C4500104563 /* reviewPool.swift in Sources */,
