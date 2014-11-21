@@ -98,7 +98,7 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="135" sectionHeaderHeight="22" sectionFooterHeight="22" id="FyD-mZ-oYU">
-                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <rect key="frame" x="0.0" y="63" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="contentInset" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
@@ -149,7 +149,7 @@
                     <tabBarItem key="tabBarItem" title="普通池子" id="Wce-kv-4qn"/>
                     <connections>
                         <outlet property="imageView" destination="Ltf-dL-5zO" id="v34-K2-WiY"/>
-                        <outlet property="tableView" destination="FyD-mZ-oYU" id="T6j-bM-p5J"/>
+                        <outlet property="tableView" destination="FyD-mZ-oYU" id="ehP-0N-npv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O8P-eT-Hy8" userLabel="First Responder" sceneMemberID="firstResponder"/>
