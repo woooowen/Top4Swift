@@ -85,7 +85,7 @@
         <!--普通池子-->
         <scene sceneID="yfC-Qt-42r">
             <objects>
-                <viewController id="Lv6-St-B94" customClass="normalPool" customModule="Top4Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Lv6-St-B94" customClass="normalPoolViewController" customModule="Top4Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ltf-dL-5zO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
