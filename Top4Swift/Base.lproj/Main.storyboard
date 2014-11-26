@@ -72,10 +72,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Lv6-St-B94" kind="relationship" relationship="viewControllers" id="DVQ-mN-NBB"/>
                         <segue destination="Qd5-to-T2W" kind="relationship" relationship="viewControllers" id="YKb-D3-fx0"/>
                         <segue destination="9dc-WB-Sug" kind="relationship" relationship="viewControllers" id="ahD-qK-q3q"/>
                         <segue destination="KKs-pZ-szv" kind="relationship" relationship="viewControllers" id="HtZ-Oi-09I"/>
+                        <segue destination="Lv6-St-B94" kind="relationship" relationship="viewControllers" id="cRT-F3-8PC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tdl-NN-jeH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -85,7 +85,7 @@
         <!--普通池子-->
         <scene sceneID="yfC-Qt-42r">
             <objects>
-                <viewController storyboardIdentifier="ViewController1" id="Lv6-St-B94" customClass="normalPool" customModule="Top4Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Lv6-St-B94" customClass="normalPool" customModule="Top4Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ltf-dL-5zO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -138,18 +138,13 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="Lv6-St-B94" id="y9q-Nf-V7r"/>
-                                    <outlet property="delegate" destination="Lv6-St-B94" id="xrG-h5-C5h"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="普通池子" id="Wce-kv-4qn"/>
                     <connections>
-                        <outlet property="imageView" destination="Ltf-dL-5zO" id="v34-K2-WiY"/>
-                        <outlet property="tableView" destination="FyD-mZ-oYU" id="ehP-0N-npv"/>
+                        <outlet property="tableView" destination="FyD-mZ-oYU" id="I3X-2f-pk6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O8P-eT-Hy8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -159,7 +154,7 @@
         <!--达人池子-->
         <scene sceneID="Vgg-NX-Npu">
             <objects>
-                <viewController storyboardIdentifier="ViewController2" id="Qd5-to-T2W" customClass="darenPool" customModule="Top4Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Qd5-to-T2W" customClass="darenPool" customModule="Top4Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5rK-lp-zhT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -205,19 +200,11 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="Qd5-to-T2W" id="vmG-hf-4vQ"/>
-                                    <outlet property="delegate" destination="Qd5-to-T2W" id="6sE-xg-1bP"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="达人池子" id="Xyc-cm-EJD"/>
-                    <connections>
-                        <outlet property="imageView" destination="5rK-lp-zhT" id="oIP-Cs-kUe"/>
-                        <outlet property="tableView" destination="juZ-0N-vSr" id="2RU-e9-Nca"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UCK-8e-dbS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -272,20 +259,12 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="9dc-WB-Sug" id="VgX-wH-KJt"/>
-                                    <outlet property="delegate" destination="9dc-WB-Sug" id="aOT-XJ-Juq"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="复审池子" id="nI9-Ss-KIE"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="imageView" destination="kU3-Hz-Cx8" id="sC3-Kf-OA3"/>
-                        <outlet property="tableView" destination="b2D-I4-mgt" id="1oE-Yc-D78"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aGE-gQ-Q2l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -340,20 +319,12 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="KKs-pZ-szv" id="77u-EG-32l"/>
-                                    <outlet property="delegate" destination="KKs-pZ-szv" id="hTD-wN-zTe"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="已推荐" id="406-l8-vrO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="imageView" destination="Qyh-ZD-8FN" id="4zX-P8-Ccs"/>
-                        <outlet property="tableView" destination="mDZ-XD-Kkr" id="c7B-Gj-lJH"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6hU-Wm-LRT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

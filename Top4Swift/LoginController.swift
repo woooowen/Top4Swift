@@ -25,10 +25,9 @@ class LoginController: UIViewController {
     
     //点击登录
     @IBAction func LoginBtnClick(sender: AnyObject) {
-        let url = "http://top.mogujie.com/app_top_v142_login/mobilelogin?_swidth=720&_channel=NAOtop&_atype=android&_sdklevel=18&_network=2&_fs=NAOtop142&_did=99000537220553&_aver=142&_source=NAOtop142"
+//        let url = "http://top.mogujie.com/app_top_v142_login/mobilelogin?_swidth=720&_channel=NAOtop&_atype=android&_sdklevel=18&_network=2&_fs=NAOtop142&_did=99000537220553&_aver=142&_source=NAOtop142"
         //println(Uname.text)
-        
-        //self.performSegueWithIdentifier("login", sender: self)
+        self.performSegueWithIdentifier("login", sender: self)
     }
     
     //点击其他部位隐藏虚拟键盘
