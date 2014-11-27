@@ -13,9 +13,7 @@ class normalPoolViewController: UIViewController,HttpProtocol,UITableViewDataSou
     var timeLineUrl = "http://top.mogujie.com/top/zadmin/app/daren?sign=Mx3KdFcp1pGbaU4PLk82p9sAON6%2FXfJwJjiKf%2FjNMD8J3YyXyjPQS%2FUUQmMMjduXNoZXMsS6cXMF66wmRMs%2Bsw%3D%3D"
     
     @IBOutlet weak var tableView: UITableView!
-    
-
-    
+        
     var eHttp: HttpController = HttpController()
     var tmpListData: NSMutableArray = NSMutableArray()
     var listData: NSMutableArray = NSMutableArray()

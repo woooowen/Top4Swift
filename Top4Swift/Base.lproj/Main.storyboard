@@ -204,11 +204,18 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Qd5-to-T2W" id="AcE-mz-bVA"/>
+                                    <outlet property="delegate" destination="Qd5-to-T2W" id="dZj-a7-ZhT"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="达人池子" id="Xyc-cm-EJD"/>
+                    <connections>
+                        <outlet property="tableView" destination="juZ-0N-vSr" id="hzo-y8-11F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UCK-8e-dbS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -263,12 +270,19 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="9dc-WB-Sug" id="YuD-nI-bZf"/>
+                                    <outlet property="delegate" destination="9dc-WB-Sug" id="oJV-Nd-Qiv"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="复审池子" id="nI9-Ss-KIE"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="b2D-I4-mgt" id="gDO-qs-Z6W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aGE-gQ-Q2l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -323,12 +337,19 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="KKs-pZ-szv" id="4qV-tH-AQe"/>
+                                    <outlet property="delegate" destination="KKs-pZ-szv" id="mr8-Sd-JYR"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="已推荐" id="406-l8-vrO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="mDZ-XD-Kkr" id="j26-Bg-t2c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6hU-Wm-LRT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
