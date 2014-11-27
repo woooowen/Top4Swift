@@ -23,6 +23,9 @@ class normalPoolViewController: UIViewController,HttpProtocol,UITableViewDataSou
     var imageCache = Dictionary<String,UIImage>()
     
     let cellImg = 1
+    let cellLbl1 = 2
+    let cellLbl2 = 3
+    let cellLbl3 = 4
     
     
     override func viewDidLoad() {
@@ -65,11 +68,26 @@ class normalPoolViewController: UIViewController,HttpProtocol,UITableViewDataSou
             }else{
                 img.image = image
             }
-            
         }
-
         
+        //标题
+        var label1 = cell?.viewWithTag(cellLbl1) as UILabel
+        //换行
+        label1.numberOfLines = 0
+        label1.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        label1.text = rowData["content"] as NSString
         
+        var label2 = cell?.viewWithTag(cellLbl2) as UILabel
+        label2.text = rowData["content"] as NSString
+        
+        var label3 = cell?.viewWithTag(cellLbl3) as UILabel
+        //时间格式转换
+        var outputFormat = NSDateFormatter()
+        outputFormat.dateFormat = "yyyy/MM/dd HH:mm:ss"
+        outputFormat.locale = NSLocale(localeIdentifier: "shanghai")
+        //发布时间
+        let pubTime = NSDate(timeIntervalSince1970: rowData["pubTime"] as NSTimeInterval)
+        label3.text = outputFormat.stringFromDate(pubTime)
         
         return cell as UITableViewCell
         
