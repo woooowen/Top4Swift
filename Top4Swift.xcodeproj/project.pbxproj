@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A2C22481A286C550022B730 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A2C22411A286C550022B730 /* arrow@2x.png */; };
+		1A2C22491A286C550022B730 /* Refresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C22421A286C550022B730 /* Refresh.swift */; };
+		1A2C224A1A286C550022B730 /* RefreshBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C22431A286C550022B730 /* RefreshBaseView.swift */; };
+		1A2C224B1A286C550022B730 /* RefreshConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C22441A286C550022B730 /* RefreshConst.swift */; };
+		1A2C224C1A286C550022B730 /* RefreshFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C22451A286C550022B730 /* RefreshFooterView.swift */; };
+		1A2C224D1A286C550022B730 /* RefreshHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C22461A286C550022B730 /* RefreshHeaderView.swift */; };
+		1A2C224E1A286C550022B730 /* UIScrollView+Refresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C22471A286C550022B730 /* UIScrollView+Refresh.swift */; };
 		1A7C4AE71A1E036200104563 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C4AE61A1E036200104563 /* LoginController.swift */; };
 		1A7C4AE91A1E0B4100104563 /* normalPoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C4AE81A1E0B4100104563 /* normalPoolViewController.swift */; };
 		1A7C4AEB1A1E0BB800104563 /* darenPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C4AEA1A1E0BB800104563 /* darenPool.swift */; };
@@ -32,6 +39,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A2C22411A286C550022B730 /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
+		1A2C22421A286C550022B730 /* Refresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Refresh.swift; sourceTree = "<group>"; };
+		1A2C22431A286C550022B730 /* RefreshBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshBaseView.swift; sourceTree = "<group>"; };
+		1A2C22441A286C550022B730 /* RefreshConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshConst.swift; sourceTree = "<group>"; };
+		1A2C22451A286C550022B730 /* RefreshFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshFooterView.swift; sourceTree = "<group>"; };
+		1A2C22461A286C550022B730 /* RefreshHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshHeaderView.swift; sourceTree = "<group>"; };
+		1A2C22471A286C550022B730 /* UIScrollView+Refresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Refresh.swift"; sourceTree = "<group>"; };
 		1A7C4AE61A1E036200104563 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		1A7C4AE81A1E0B4100104563 /* normalPoolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = normalPoolViewController.swift; path = ../normalPoolViewController.swift; sourceTree = "<group>"; };
 		1A7C4AEA1A1E0BB800104563 /* darenPool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = darenPool.swift; sourceTree = "<group>"; };
@@ -68,6 +82,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A2C22401A286C550022B730 /* Refresh */ = {
+			isa = PBXGroup;
+			children = (
+				1A2C22411A286C550022B730 /* arrow@2x.png */,
+				1A2C22421A286C550022B730 /* Refresh.swift */,
+				1A2C22431A286C550022B730 /* RefreshBaseView.swift */,
+				1A2C22441A286C550022B730 /* RefreshConst.swift */,
+				1A2C22451A286C550022B730 /* RefreshFooterView.swift */,
+				1A2C22461A286C550022B730 /* RefreshHeaderView.swift */,
+				1A2C22471A286C550022B730 /* UIScrollView+Refresh.swift */,
+			);
+			path = Refresh;
+			sourceTree = "<group>";
+		};
 		1AEAB74D1A1B65B400D13AD6 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +117,7 @@
 		1AEAB7581A1B65B400D13AD6 /* Top4Swift */ = {
 			isa = PBXGroup;
 			children = (
+				1A2C22401A286C550022B730 /* Refresh */,
 				1AEAB75B1A1B65B400D13AD6 /* AppDelegate.swift */,
 				1AEAB75D1A1B65B400D13AD6 /* ViewController.swift */,
 				1AEAB75F1A1B65B400D13AD6 /* Main.storyboard */,
@@ -210,6 +239,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A2C22481A286C550022B730 /* arrow@2x.png in Resources */,
 				1AEAB7611A1B65B400D13AD6 /* Main.storyboard in Resources */,
 				1AEAB7661A1B65B400D13AD6 /* LaunchScreen.xib in Resources */,
 				1AEAB7631A1B65B400D13AD6 /* Images.xcassets in Resources */,
@@ -230,10 +260,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A2C224B1A286C550022B730 /* RefreshConst.swift in Sources */,
+				1A2C224D1A286C550022B730 /* RefreshHeaderView.swift in Sources */,
+				1A2C22491A286C550022B730 /* Refresh.swift in Sources */,
 				1AEAB75E1A1B65B400D13AD6 /* ViewController.swift in Sources */,
+				1A2C224C1A286C550022B730 /* RefreshFooterView.swift in Sources */,
 				1A7C4AE71A1E036200104563 /* LoginController.swift in Sources */,
+				1A2C224A1A286C550022B730 /* RefreshBaseView.swift in Sources */,
 				1A7C4AEF1A1E0C7200104563 /* onlinePool.swift in Sources */,
 				1AEAB75C1A1B65B400D13AD6 /* AppDelegate.swift in Sources */,
+				1A2C224E1A286C550022B730 /* UIScrollView+Refresh.swift in Sources */,
 				1A7C4AE91A1E0B4100104563 /* normalPoolViewController.swift in Sources */,
 				1AEAB77C1A1B660400D13AD6 /* HttpController.swift in Sources */,
 				1A7C4AED1A1E0C4500104563 /* reviewPool.swift in Sources */,

@@ -25,12 +25,48 @@ class normalPoolViewController: UIViewController,HttpProtocol,UITableViewDataSou
     let cellLbl2 = 3
     let cellLbl3 = 4
     
+    let refreshControl = UIRefreshControl()
+    
+    //Refresh func
+    func setupRefresh(){
+        self.tableView.addHeaderWithCallback({
+            let delayInSeconds:Int64 =  1000000000  * 2
+            var popTime:dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW,delayInSeconds)
+            dispatch_after(popTime, dispatch_get_main_queue(), {
+                self.tableView.reloadData()
+                self.tableView.headerEndRefreshing()
+            })
+        })
+        
+        self.tableView.addFooterWithCallback({
+            var nextPage = String(self.page + 1)
+            var tmpTimeLineUrl = self.timeLineUrl + "&page=" + nextPage as NSString
+            self.eHttp.delegate = self
+            self.eHttp.get(tmpTimeLineUrl)
+            let delayInSeconds:Int64 = 1000000000 * 2
+            var popTime:dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW,delayInSeconds)
+            dispatch_after(popTime, dispatch_get_main_queue(), {
+                self.tableView.footerEndRefreshing()
+                if(self.tmpListData != self.listData){
+                    if(self.tmpListData.count != 0){
+                        var tmpListDataCount = self.tmpListData.count
+                        for(var i:Int = 0; i < tmpListDataCount; i++){
+                            self.listData.addObject(self.tmpListData[i])
+                        }
+                    }
+                    self.tableView.reloadData()
+                    self.tmpListData.removeAllObjects()
+                }
+            })
+        })
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         eHttp.delegate = self
         eHttp.get(self.timeLineUrl)
+        self.setupRefresh()
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,17 +77,23 @@ class normalPoolViewController: UIViewController,HttpProtocol,UITableViewDataSou
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
-        return self.tmpListData.count
+        if(self.listData.count == 0){
+            
+            if(self.tmpListData.count != 0){
+                
+                self.listData = self.tmpListData
+            }
+        }
+        return listData.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         var cell: AnyObject? = tableView.dequeueReusableCellWithIdentifier("list", forIndexPath: indexPath)
-        let rowData: NSDictionary = self.tmpListData[indexPath.row] as NSDictionary
+        let rowData: NSDictionary = self.listData[indexPath.row] as NSDictionary
         let imgUrl = rowData["cover"] as String
         var img = cell?.viewWithTag(cellImg) as UIImageView
         img.image = UIImage(named: "default.png")
         
-
         if(imgUrl != ""){
             let image = self.imageCache[imgUrl] as UIImage?
             if(image != ""){
