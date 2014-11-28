@@ -10,7 +10,7 @@ import UIKit
 
 class normalPoolViewController: UIViewController,HttpProtocol,UITableViewDataSource,UITableViewDelegate {
     
-    var timeLineUrl = "http://top.mogujie.com/top/zadmin/app/daren?sign=Mx3KdFcp1pGbaU4PLk82p9sAON6%2FXfJwJjiKf%2FjNMD8J3YyXyjPQS%2FUUQmMMjduXNoZXMsS6cXMF66wmRMs%2Bsw%3D%3D"
+    var timeLineUrl = "http://top.mogujie.com/top/zadmin/app/index?sign=Mx3KdFcp1pGbaU4PLk82p9sAON6%2FXfJwJjiKf%2FjNMD8J3YyXyjPQS%2FUUQmMMjduXNoZXMsS6cXMF66wmRMs%2Bsw%3D%3D"
     
     @IBOutlet weak var tableView: UITableView!
         
