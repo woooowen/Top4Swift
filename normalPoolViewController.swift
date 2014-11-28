@@ -19,6 +19,7 @@ class normalPoolViewController: UIViewController,HttpProtocol,UITableViewDataSou
     var listData: NSMutableArray = NSMutableArray()
     var page = 1 //page
     var imageCache = Dictionary<String,UIImage>()
+    var tid: String = ""
     
     let cellImg = 1
     let cellLbl1 = 2
@@ -133,13 +134,30 @@ class normalPoolViewController: UIViewController,HttpProtocol,UITableViewDataSou
         
     }
     
+    //点击事件处理
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        let trueData: NSDictionary = self.listData[indexPath.row] as NSDictionary
+        self.tid = trueData["tid"] as NSString
+        self.performSegueWithIdentifier("detail", sender: self)
+    }
+    //跳转传参方法
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "detail" {
+            var instance = segue.destinationViewController as detailViewController
+            instance.timeLineUrl = self.tid
+        }
+    }
+    
+    //json 数据处理
     func didRecieveResult(result: NSDictionary){
-
         if(result["result"]?["list"] != nil && result["result"]?["isEnd"] as NSNumber != 1){
             self.tmpListData = result["result"]?["list"] as NSMutableArray //list数据
             self.page = result["result"]?["page"] as Int
             self.tableView.reloadData()
         }
+    }
+    //返回按钮
+    @IBAction func close(segue: UIStoryboardSegue){
     }
 }
 

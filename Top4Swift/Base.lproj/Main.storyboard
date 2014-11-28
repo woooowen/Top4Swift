@@ -149,6 +149,7 @@
                     <tabBarItem key="tabBarItem" title="普通池子" id="Wce-kv-4qn"/>
                     <connections>
                         <outlet property="tableView" destination="FyD-mZ-oYU" id="I3X-2f-pk6"/>
+                        <segue destination="lkZ-hE-o0Y" kind="modal" identifier="detail" id="gH1-4y-9X2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O8P-eT-Hy8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -215,6 +216,7 @@
                     <tabBarItem key="tabBarItem" title="达人池子" id="Xyc-cm-EJD"/>
                     <connections>
                         <outlet property="tableView" destination="juZ-0N-vSr" id="hzo-y8-11F"/>
+                        <segue destination="lkZ-hE-o0Y" kind="modal" identifier="detail" id="Fhu-Nm-sYO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UCK-8e-dbS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -282,6 +284,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="b2D-I4-mgt" id="gDO-qs-Z6W"/>
+                        <segue destination="lkZ-hE-o0Y" kind="modal" identifier="detail" id="4sb-Ps-CNA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aGE-gQ-Q2l" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -349,11 +352,84 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="mDZ-XD-Kkr" id="j26-Bg-t2c"/>
+                        <segue destination="lkZ-hE-o0Y" kind="modal" identifier="detail" id="7tm-BZ-9ae"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6hU-Wm-LRT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="617" y="1219"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="JiT-sx-Vm7">
+            <objects>
+                <viewController id="lkZ-hE-o0Y" customClass="detailViewController" customModule="Top4Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BHs-g5-ji2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xhv-cY-q27">
+                                <rect key="frame" x="138" y="522" width="45" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="看过了">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gfi-zh-vSN">
+                                <rect key="frame" x="275" y="522" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="下架">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HHN-Y0-MSl">
+                                <rect key="frame" x="15" y="522" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="通过">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <webView contentMode="scaleToFill" id="ZUY-7c-gZb">
+                                <rect key="frame" x="0.0" y="64" width="320" height="450"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="zFY-rO-f6B">
+                                <rect key="frame" x="150" y="200" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <navigationBar contentMode="scaleToFill" id="Wdt-JH-mvg">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="预览" id="MgK-NQ-UhO">
+                                        <barButtonItem key="leftBarButtonItem" id="1P8-FL-HO7">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GKs-gT-s6n">
+                                                <rect key="frame" x="16" y="7" width="40" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                <state key="normal" title="后退">
+                                                    <color key="titleColor" red="0.79126363990000004" green="0.10776552709999999" blue="0.13524872700000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="aFU-T4-PlL" kind="unwind" unwindAction="close:" id="huS-LR-cNS"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="loadImg" destination="zFY-rO-f6B" id="JmT-na-zNU"/>
+                        <outlet property="webView" destination="ZUY-7c-gZb" id="8C4-qq-I3o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jfC-va-EcI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="aFU-T4-PlL" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1490" y="310"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -361,4 +437,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="7tm-BZ-9ae"/>
+    </inferredMetricsTieBreakers>
 </document>
