@@ -10,7 +10,7 @@ import UIKit
 
 class onlinePool: UIViewController,HttpProtocol,UITableViewDataSource,UITableViewDelegate {
     
-    var timeLineUrl = "http://top.mogujie.com/top/zadmin/app/yituijian?sign=Mx3KdFcp1pGbaU4PLk82p9sAON6%2FXfJwJjiKf%2FjNMD8J3YyXyjPQS%2FUUQmMMjduXNoZXMsS6cXMF66wmRMs%2Bsw%3D%3D&page=2"
+    var timeLineUrl = "http://top.mogujie.com/top/zadmin/app/yituijian?sign=Mx3KdFcp1pGbaU4PLk82p9sAON6%2FXfJwJjiKf%2FjNMD8J3YyXyjPQS%2FUUQmMMjduXNoZXMsS6cXMF66wmRMs%2Bsw%3D%3D"
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -91,14 +91,17 @@ class onlinePool: UIViewController,HttpProtocol,UITableViewDataSource,UITableVie
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         var cell: AnyObject? = tableView.dequeueReusableCellWithIdentifier("list", forIndexPath: indexPath)
+
+        
         var rowData: NSDictionary = self.tmpListData[indexPath.row] as NSDictionary
+        
         let imgUrl = rowData["cover"]? as String
         var img = cell?.viewWithTag(cellImg) as UIImageView
         img.image = UIImage(named: "default.png")
         
         if(imgUrl != ""){
             let image = self.imageCache[imgUrl] as UIImage?
-            if(image != ""){
+            if(image == nil){
                 let imageUrl = NSURL(string: imgUrl)
                 let request: NSURLRequest = NSURLRequest(URL: imageUrl!)
                 //异步获取
