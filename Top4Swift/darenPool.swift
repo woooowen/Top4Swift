@@ -19,18 +19,55 @@ class darenPool: UIViewController,HttpProtocol,UITableViewDataSource,UITableView
     var listData: NSMutableArray = NSMutableArray()
     var page = 1 //page
     var imageCache = Dictionary<String,UIImage>()
+    var tid: String = ""
     
     let cellImg = 1
     let cellLbl1 = 2
     let cellLbl2 = 3
     let cellLbl3 = 4
     
+    let refreshControl = UIRefreshControl()
+    
+    //Refresh func
+    func setupRefresh(){
+        self.tableView.addHeaderWithCallback({
+            let delayInSeconds:Int64 =  1000000000  * 2
+            var popTime:dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW,delayInSeconds)
+            dispatch_after(popTime, dispatch_get_main_queue(), {
+                self.tableView.reloadData()
+                self.tableView.headerEndRefreshing()
+            })
+        })
+        
+        self.tableView.addFooterWithCallback({
+            var nextPage = String(self.page + 1)
+            var tmpTimeLineUrl = self.timeLineUrl + "&page=" + nextPage as NSString
+            self.eHttp.delegate = self
+            self.eHttp.get(tmpTimeLineUrl)
+            let delayInSeconds:Int64 = 1000000000 * 2
+            var popTime:dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW,delayInSeconds)
+            dispatch_after(popTime, dispatch_get_main_queue(), {
+                self.tableView.footerEndRefreshing()
+                if(self.tmpListData != self.listData){
+                    if(self.tmpListData.count != 0){
+                        var tmpListDataCount = self.tmpListData.count
+                        for(var i:Int = 0; i < tmpListDataCount; i++){
+                            self.listData.addObject(self.tmpListData[i])
+                        }
+                    }
+                    self.tableView.reloadData()
+                    self.tmpListData.removeAllObjects()
+                }
+            })
+        })
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         eHttp.delegate = self
         eHttp.get(self.timeLineUrl)
+        self.setupRefresh()
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,7 +78,14 @@ class darenPool: UIViewController,HttpProtocol,UITableViewDataSource,UITableView
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
-        return self.tmpListData.count
+        if(self.listData.count == 0){
+            
+            if(self.tmpListData.count != 0){
+                
+                self.listData = self.tmpListData
+            }
+        }
+        return listData.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
@@ -50,7 +94,6 @@ class darenPool: UIViewController,HttpProtocol,UITableViewDataSource,UITableView
         let imgUrl = rowData["cover"] as String
         var img = cell?.viewWithTag(cellImg) as UIImageView
         img.image = UIImage(named: "default.png")
-        
         
         if(imgUrl != ""){
             let image = self.imageCache[imgUrl] as UIImage?
@@ -76,7 +119,7 @@ class darenPool: UIViewController,HttpProtocol,UITableViewDataSource,UITableView
         label1.text = rowData["content"] as NSString
         
         var label2 = cell?.viewWithTag(cellLbl2) as UILabel
-        label2.text = rowData["content"] as NSString
+        label2.text = rowData["user"]?["uname"] as NSString
         
         var label3 = cell?.viewWithTag(cellLbl3) as UILabel
         //时间格式转换
@@ -91,6 +134,20 @@ class darenPool: UIViewController,HttpProtocol,UITableViewDataSource,UITableView
         
     }
     
+    //点击事件处理
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        let trueData: NSDictionary = self.listData[indexPath.row] as NSDictionary
+        self.tid = trueData["tid"] as NSString
+        self.performSegueWithIdentifier("detail", sender: self)
+    }
+    //跳转传参方法
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "detail" {
+            var instance = segue.destinationViewController as detailViewController
+            instance.timeLineUrl = self.tid
+        }
+    }
+    
     func didRecieveResult(result: NSDictionary){
         
         if(result["result"]?["list"] != nil && result["result"]?["isEnd"] as NSNumber != 1){
@@ -98,6 +155,9 @@ class darenPool: UIViewController,HttpProtocol,UITableViewDataSource,UITableView
             self.page = result["result"]?["page"] as Int
             self.tableView.reloadData()
         }
+    }
+    //返回按钮
+    @IBAction func close(segue: UIStoryboardSegue){
     }
 }
 

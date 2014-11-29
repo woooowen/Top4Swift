@@ -119,7 +119,7 @@ class normalPoolViewController: UIViewController,HttpProtocol,UITableViewDataSou
         label1.text = rowData["content"] as NSString
         
         var label2 = cell?.viewWithTag(cellLbl2) as UILabel
-        label2.text = rowData["content"] as NSString
+        label2.text = rowData["user"]?["uname"] as NSString
         
         var label3 = cell?.viewWithTag(cellLbl3) as UILabel
         //时间格式转换
