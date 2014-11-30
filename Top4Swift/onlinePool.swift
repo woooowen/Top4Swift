@@ -91,9 +91,8 @@ class onlinePool: UIViewController,HttpProtocol,UITableViewDataSource,UITableVie
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         var cell: AnyObject? = tableView.dequeueReusableCellWithIdentifier("list", forIndexPath: indexPath)
-
         
-        var rowData: NSDictionary = self.tmpListData[indexPath.row] as NSDictionary
+        var rowData: NSDictionary = self.listData[indexPath.row] as NSDictionary
         
         let imgUrl = rowData["cover"]? as String
         var img = cell?.viewWithTag(cellImg) as UIImageView

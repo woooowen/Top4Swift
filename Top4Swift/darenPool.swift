@@ -90,7 +90,7 @@ class darenPool: UIViewController,HttpProtocol,UITableViewDataSource,UITableView
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         var cell: AnyObject? = tableView.dequeueReusableCellWithIdentifier("list", forIndexPath: indexPath)
-        let rowData: NSDictionary = self.tmpListData[indexPath.row] as NSDictionary
+        let rowData: NSDictionary = self.listData[indexPath.row] as NSDictionary
         let imgUrl = rowData["cover"] as String
         var img = cell?.viewWithTag(cellImg) as UIImageView
         img.image = UIImage(named: "default.png")
