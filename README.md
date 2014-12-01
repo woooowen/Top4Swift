@@ -10,6 +10,7 @@ Top4Swift
   * 详细页面跳转
   * webView加载,加载图片loading
   * json get post提交
+  * 图片缓存加载
   
 ###to do list
 
