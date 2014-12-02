@@ -8,6 +8,7 @@ class HttpController: NSObject{
     
     var delegate: HttpProtocol?
     
+    //json get方法
     func get(url: String){
         var nsUrl: NSURL = NSURL(string: url)!
         var request: NSURLRequest = NSURLRequest(URL: nsUrl)
@@ -15,5 +16,11 @@ class HttpController: NSObject{
             var jsonResult: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
             self.delegate?.didRecieveResult(jsonResult)            
         })
+    }
+    
+    //json post方法
+    func post(url: String ,params: NSDictionary){
+        
+
     }
 }

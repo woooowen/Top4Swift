@@ -12,6 +12,8 @@
 	<dict>
 		<key>2A0DAEB0B7E54D25FF15CEB1B36211123FD2A43C</key>
 		<string>https://github.com/woooowen/Top4Swift.git</string>
+		<key>C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3</key>
+		<string>https://github.com/lingoer/SwiftyJSON.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Top4Swift.xcodeproj</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>2A0DAEB0B7E54D25FF15CEB1B36211123FD2A43C</key>
 		<string>../..</string>
+		<key>C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3</key>
+		<string>../../Top4Swift/SwiftyJSON/</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/woooowen/Top4Swift.git</string>
@@ -28,6 +32,14 @@
 	<string>2A0DAEB0B7E54D25FF15CEB1B36211123FD2A43C</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SwiftyJSON</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A1341071A2DDCDC0039D4BD /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1341061A2DDCDC0039D4BD /* SwiftyJSON.swift */; };
 		1A2C22481A286C550022B730 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A2C22411A286C550022B730 /* arrow@2x.png */; };
 		1A2C22491A286C550022B730 /* Refresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C22421A286C550022B730 /* Refresh.swift */; };
 		1A2C224A1A286C550022B730 /* RefreshBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C22431A286C550022B730 /* RefreshBaseView.swift */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A1341061A2DDCDC0039D4BD /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		1A1341081A2DDE7A0039D4BD /* SwiftyJSON.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyJSON.h; sourceTree = "<group>"; };
 		1A2C22411A286C550022B730 /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
 		1A2C22421A286C550022B730 /* Refresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Refresh.swift; sourceTree = "<group>"; };
 		1A2C22431A286C550022B730 /* RefreshBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshBaseView.swift; sourceTree = "<group>"; };
@@ -119,6 +122,7 @@
 		1AEAB7581A1B65B400D13AD6 /* Top4Swift */ = {
 			isa = PBXGroup;
 			children = (
+				1A1341061A2DDCDC0039D4BD /* SwiftyJSON.swift */,
 				1A2C22401A286C550022B730 /* Refresh */,
 				1AEAB75B1A1B65B400D13AD6 /* AppDelegate.swift */,
 				1AEAB75D1A1B65B400D13AD6 /* ViewController.swift */,
@@ -133,6 +137,7 @@
 				1A7C4AEC1A1E0C4500104563 /* reviewPool.swift */,
 				1A7C4AEE1A1E0C7200104563 /* onlinePool.swift */,
 				1A2C224F1A28763A0022B730 /* detailViewController.swift */,
+				1A1341081A2DDE7A0039D4BD /* SwiftyJSON.h */,
 			);
 			path = Top4Swift;
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 				1A2C22501A28763A0022B730 /* detailViewController.swift in Sources */,
 				1AEAB75C1A1B65B400D13AD6 /* AppDelegate.swift in Sources */,
 				1A2C224E1A286C550022B730 /* UIScrollView+Refresh.swift in Sources */,
+				1A1341071A2DDCDC0039D4BD /* SwiftyJSON.swift in Sources */,
 				1A7C4AE91A1E0B4100104563 /* normalPoolViewController.swift in Sources */,
 				1AEAB77C1A1B660400D13AD6 /* HttpController.swift in Sources */,
 				1A7C4AED1A1E0C4500104563 /* reviewPool.swift in Sources */,
