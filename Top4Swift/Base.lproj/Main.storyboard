@@ -363,23 +363,34 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xhv-cY-q27">
                                 <rect key="frame" x="138" y="522" width="45" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="看过了">
+                                <state key="normal" title="看过">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="checkBtnClick:" destination="lkZ-hE-o0Y" eventType="touchUpInside" id="XyO-xo-hqO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gfi-zh-vSN">
-                                <rect key="frame" x="275" y="522" width="30" height="30"/>
+                                <rect key="frame" x="260" y="522" width="45" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="下架">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="offShelfBtnClick:" destination="lkZ-hE-o0Y" eventType="touchUpInside" id="Fzi-q2-uDH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HHN-Y0-MSl">
-                                <rect key="frame" x="15" y="522" width="30" height="30"/>
+                                <rect key="frame" x="15" y="522" width="45" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="通过">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="accessBtnClick:" destination="lkZ-hE-o0Y" eventType="touchUpInside" id="ufv-w2-YO3"/>
+                                </connections>
                             </button>
                             <webView contentMode="scaleToFill" id="ZUY-7c-gZb">
                                 <rect key="frame" x="0.0" y="64" width="320" height="450"/>
@@ -415,7 +426,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="accessBtn" destination="HHN-Y0-MSl" id="FzK-f6-HtK"/>
+                        <outlet property="checkBtn" destination="xhv-cY-q27" id="Hbf-FG-RwV"/>
                         <outlet property="loadImg" destination="zFY-rO-f6B" id="JmT-na-zNU"/>
+                        <outlet property="offShelfBtn" destination="gfi-zh-vSN" id="bW4-Hk-N9B"/>
                         <outlet property="webView" destination="ZUY-7c-gZb" id="8C4-qq-I3o"/>
                     </connections>
                 </viewController>
