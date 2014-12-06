@@ -7,7 +7,7 @@
 //
 import UIKit
 
-class detailViewController: UIViewController,UIWebViewDelegate {
+class detailViewController: UIViewController,UIWebViewDelegate,HttpProtocol {
     
     @IBOutlet weak var webView: UIWebView!
     
@@ -20,6 +20,10 @@ class detailViewController: UIViewController,UIWebViewDelegate {
     @IBOutlet weak var offShelfBtn: UIButton!
     
     var timeLineUrl: String = ""
+    
+    var eHttp: HttpController = HttpController()
+    
+    var tmpCode = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,8 +64,17 @@ class detailViewController: UIViewController,UIWebViewDelegate {
     @IBAction func checkBtnClick(sender: AnyObject) {
         var btnName = checkBtn.titleForState(UIControlState.Normal)
         if(btnName == "看过"){
-            checkBtn.setTitle("已看过", forState: UIControlState.Normal)
-            checkBtn.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
+            let url = ""
+            let params = ["twitterId" : "13sik"]
+            eHttp.delegate = self
+            eHttp.post(url, params: params)
+            println(self.tmpCode)
+            if(self.tmpCode == 1001){
+                checkBtn.setTitle("已看过", forState: UIControlState.Normal)
+                checkBtn.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
+            }else{
+                checkBtn.setTitle("失败", forState: UIControlState.Normal)
+            }
         }else{
             checkBtn.setTitle("看过", forState: UIControlState.Normal)
             checkBtn.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
@@ -77,6 +90,12 @@ class detailViewController: UIViewController,UIWebViewDelegate {
             offShelfBtn.setTitle("下架", forState: UIControlState.Normal)
             offShelfBtn.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
         }
+    }
+    //json 数据处理
+    func didRecieveResult(result: NSDictionary){
+    
+        self.tmpCode = result["status"]?["code"] as Int
+        
     }
     
 }

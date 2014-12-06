@@ -20,7 +20,27 @@ class HttpController: NSObject{
     
     //json post方法
     func post(url: String ,params: NSDictionary){
-        
-
+        var nsUrl: NSURL = NSURL(string: url)!
+        var request: NSMutableURLRequest = NSMutableURLRequest(URL: nsUrl)
+        request.HTTPMethod = "POST"
+        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        var objStr = ""
+        for(key, value) in params as NSDictionary{
+            if(objStr == ""){
+                objStr += "\(key)=\(value)"
+            }else{
+                objStr += "&\(key)=\(value)"
+            }
+        }
+        let data: NSData = objStr.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!
+        request.HTTPBody = data
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {(data, response, error) -> Void in
+            if (error == nil) {
+                //callback("", error.localizedDescription)
+                var jsonResult: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
+                self.delegate?.didRecieveResult(jsonResult)
+            }
+        }
+        task.resume()
     }
 }
