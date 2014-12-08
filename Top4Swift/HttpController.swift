@@ -19,9 +19,10 @@ class HttpController: NSObject{
     }
     
     //json post方法
-    func post(url: String ,params: NSDictionary){
+    func post(url: String ,params: NSDictionary,callback: (NSDictionary) -> Void) {
         var nsUrl: NSURL = NSURL(string: url)!
         var request: NSMutableURLRequest = NSMutableURLRequest(URL: nsUrl)
+        
         request.HTTPMethod = "POST"
         request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         var objStr = ""
@@ -34,13 +35,10 @@ class HttpController: NSObject{
         }
         let data: NSData = objStr.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!
         request.HTTPBody = data
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {(data, response, error) -> Void in
-            if (error == nil) {
-                //callback("", error.localizedDescription)
-                var jsonResult: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
-                self.delegate?.didRecieveResult(jsonResult)
-            }
-        }
-        task.resume()
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!,data: NSData!,error: NSError!)->Void in
+            var jsonResult: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
+            self.delegate?.didRecieveResult(jsonResult)
+            callback(jsonResult)
+        })
     }
 }

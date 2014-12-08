@@ -11,7 +11,7 @@ import UIKit
 
 class normalPoolViewController: UIViewController,HttpProtocol,UITableViewDataSource,UITableViewDelegate {
     
-    var timeLineUrl = ""
+    var timeLineUrl = "http://top.mogujie.com/top/zadmin/app/index?sign=MIoTSY7txEI7opexh1Co/gIWRTNYMYpC2Q39CSheb1fJQ5/fB3UKOUSeqJOV0PhT+Oshj9xngY2kCKJVYiNVJw==&_adid=99000537220553"
     
     @IBOutlet weak var tableView: UITableView!
         

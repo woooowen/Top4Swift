@@ -25,6 +25,10 @@ class detailViewController: UIViewController,UIWebViewDelegate,HttpProtocol {
     
     var tmpCode = 0
     
+    var tmpJson = NSDictionary()
+    
+    var jsonReturn: NSString = NSString()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         webView.delegate = self
@@ -60,24 +64,33 @@ class detailViewController: UIViewController,UIWebViewDelegate,HttpProtocol {
             accessBtn.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
         }
     }
+    //json 数据处理
+    func didRecieveResult(result: NSDictionary){
+        self.tmpCode = result["status"]?["code"] as Int
+    }
+
     //看过按钮点击事件
     @IBAction func checkBtnClick(sender: AnyObject) {
         var btnName = checkBtn.titleForState(UIControlState.Normal)
         if(btnName == "看过"){
-            let url = ""
+            //post 请求api,并且给api传递参数,根据返回值来判断动作执行
+            let url = "http://top.mogujie.com/top/zadmin/app/check?sign=MIoTSY7txEI7opexh1Co/gIWRTNYMYpC2Q39CSheb1fJQ5/fB3UKOUSeqJOV0PhT+Oshj9xngY2kCKJVYiNVJw==&_adid=99000537220553"
             let params = ["twitterId" : "13sik"]
             eHttp.delegate = self
-            eHttp.post(url, params: params)
-            println(self.tmpCode)
-            if(self.tmpCode == 1001){
-                checkBtn.setTitle("已看过", forState: UIControlState.Normal)
-                checkBtn.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
-            }else{
-                checkBtn.setTitle("失败", forState: UIControlState.Normal)
-            }
-        }else{
-            checkBtn.setTitle("看过", forState: UIControlState.Normal)
-            checkBtn.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+            eHttp.post(url, params: params,callback: {(data: NSDictionary) -> Void in
+                var tt = false
+                if(data["status"]?["code"] as NSNumber == 1001){
+                    tt = true
+                }
+                if(tt){
+                    self.checkBtn.setTitle("已看过", forState: UIControlState.Normal)
+                    self.checkBtn.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
+                }else{
+                    self.checkBtn.setTitle("失败", forState: UIControlState.Normal)
+                    self.checkBtn.setTitle("看过", forState: UIControlState.Normal)
+                    self.checkBtn.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+                }
+            })
         }
     }
     //下架按钮点击事件
@@ -90,12 +103,6 @@ class detailViewController: UIViewController,UIWebViewDelegate,HttpProtocol {
             offShelfBtn.setTitle("下架", forState: UIControlState.Normal)
             offShelfBtn.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
         }
-    }
-    //json 数据处理
-    func didRecieveResult(result: NSDictionary){
-    
-        self.tmpCode = result["status"]?["code"] as Int
-        
     }
     
 }
