@@ -23,12 +23,6 @@ class detailViewController: UIViewController,UIWebViewDelegate,HttpProtocol {
     
     var eHttp: HttpController = HttpController()
     
-    var tmpCode = 0
-    
-    var tmpJson = NSDictionary()
-    
-    var jsonReturn: NSString = NSString()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         webView.delegate = self
@@ -53,7 +47,7 @@ class detailViewController: UIViewController,UIWebViewDelegate,HttpProtocol {
         loadImg.stopAnimating()
         loadImg.removeFromSuperview()
     }
-    //看过按钮点击事件
+    //通过按钮点击事件
     @IBAction func accessBtnClick(sender: AnyObject) {
         var btnName = accessBtn.titleForState(UIControlState.Normal)
         if(btnName == "通过"){
@@ -66,7 +60,7 @@ class detailViewController: UIViewController,UIWebViewDelegate,HttpProtocol {
     }
     //json 数据处理
     func didRecieveResult(result: NSDictionary){
-        self.tmpCode = result["status"]?["code"] as Int
+
     }
 
     //看过按钮点击事件
@@ -85,10 +79,6 @@ class detailViewController: UIViewController,UIWebViewDelegate,HttpProtocol {
                 if(tt){
                     self.checkBtn.setTitle("已看过", forState: UIControlState.Normal)
                     self.checkBtn.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
-                }else{
-                    self.checkBtn.setTitle("失败", forState: UIControlState.Normal)
-                    self.checkBtn.setTitle("看过", forState: UIControlState.Normal)
-                    self.checkBtn.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
                 }
             })
         }
