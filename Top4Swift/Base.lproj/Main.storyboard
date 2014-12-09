@@ -46,7 +46,6 @@
                                 </state>
                                 <connections>
                                     <action selector="LoginBtnClick:" destination="g5K-DU-fpf" eventType="touchUpInside" id="g44-WJ-e33"/>
-                                    <segue destination="1LC-kH-c4K" kind="modal" identifier="login" id="qXi-5e-5BS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -55,6 +54,7 @@
                     <connections>
                         <outlet property="Pwd" destination="Pyi-Ns-RN3" id="Y8Q-ZG-Ylr"/>
                         <outlet property="Uname" destination="1ye-m9-MlP" id="pZ5-dH-8gz"/>
+                        <segue destination="1LC-kH-c4K" kind="modal" identifier="login" id="1s6-kM-h0r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CDl-mL-n10" sceneMemberID="firstResponder"/>
@@ -445,6 +445,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="7tm-BZ-9ae"/>
+        <segue reference="gH1-4y-9X2"/>
     </inferredMetricsTieBreakers>
 </document>

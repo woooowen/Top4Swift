@@ -9,9 +9,10 @@
 import UIKit
 
 
-class normalPoolViewController: UIViewController,HttpProtocol,UITableViewDataSource,UITableViewDelegate {
+class normalPoolViewController: UIViewController,HttpProtocol,UITableViewDataSource,UITableViewDelegate,LoginInfoProtocol{
     
     var timeLineUrl = "http://top.mogujie.com/top/zadmin/app/index?sign=MIoTSY7txEI7opexh1Co/gIWRTNYMYpC2Q39CSheb1fJQ5/fB3UKOUSeqJOV0PhT+Oshj9xngY2kCKJVYiNVJw==&_adid=99000537220553"
+
     
     @IBOutlet weak var tableView: UITableView!
         
@@ -21,6 +22,7 @@ class normalPoolViewController: UIViewController,HttpProtocol,UITableViewDataSou
     var page = 1 //page
     var imageCache = Dictionary<String,UIImage>()
     var tid: String = ""
+    var sign: String = String()
     
     let cellImg = 1
     let cellLbl1 = 2
@@ -67,6 +69,7 @@ class normalPoolViewController: UIViewController,HttpProtocol,UITableViewDataSou
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         eHttp.delegate = self
+//        println(self.sign)
         eHttp.get(self.timeLineUrl)
         self.setupRefresh()
     }
@@ -156,6 +159,10 @@ class normalPoolViewController: UIViewController,HttpProtocol,UITableViewDataSou
             self.page = result["result"]?["page"] as Int
             self.tableView.reloadData()
         }
+    }
+    
+    func getLoginInfo(sign: String) {
+        self.sign = sign
     }
     //返回按钮
     @IBAction func close(segue: UIStoryboardSegue){
