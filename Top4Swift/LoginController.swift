@@ -9,7 +9,7 @@
 import UIKit
 protocol LoginInfoProtocol{
     //协议-用来存储登陆之后返回的用户信息,方便每个view调用
-    func getLoginInfo(sign: String)
+    func getSign(sign: String)
 }
 
 class LoginController: UIViewController,HttpProtocol{
@@ -20,6 +20,7 @@ class LoginController: UIViewController,HttpProtocol{
     var loginDelegate: LoginInfoProtocol?
     var eHttp: HttpController = HttpController()
     var sign: String = String()
+    var returnSign: String = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,9 +42,8 @@ class LoginController: UIViewController,HttpProtocol{
                 code = true
             }
             if(code){
-                self.sign = data["result"]?["sign"] as String
-                println(self.sign)
-                self.loginDelegate?.getLoginInfo(self.sign)
+//                println()
+                self.loginDelegate?.getSign("signNum")
                 self.performSegueWithIdentifier("login", sender: self)
             }else{
                 println(data)
@@ -51,7 +51,7 @@ class LoginController: UIViewController,HttpProtocol{
             
         })
     }
-
+    
 //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 //        //如果登陆成功进行跳转
 //        if segue.identifier == "login"{

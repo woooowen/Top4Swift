@@ -13,16 +13,18 @@ class normalPoolViewController: UIViewController,HttpProtocol,UITableViewDataSou
     
     var timeLineUrl = "http://top.mogujie.com/top/zadmin/app/index?sign=MIoTSY7txEI7opexh1Co/gIWRTNYMYpC2Q39CSheb1fJQ5/fB3UKOUSeqJOV0PhT+Oshj9xngY2kCKJVYiNVJw==&_adid=99000537220553"
 
-    
+    var returnSign: String = String()
     @IBOutlet weak var tableView: UITableView!
         
     var eHttp: HttpController = HttpController()
+    
     var tmpListData: NSMutableArray = NSMutableArray()
     var listData: NSMutableArray = NSMutableArray()
     var page = 1 //page
     var imageCache = Dictionary<String,UIImage>()
     var tid: String = ""
-    var sign: String = String()
+
+
     
     let cellImg = 1
     let cellLbl1 = 2
@@ -69,15 +71,19 @@ class normalPoolViewController: UIViewController,HttpProtocol,UITableViewDataSou
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         eHttp.delegate = self
-//        println(self.sign)
         eHttp.get(self.timeLineUrl)
         self.setupRefresh()
+        
+        
+        
+
+
+
+
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-
-        // Dispose of any resources that can be recreated.
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
@@ -121,10 +127,8 @@ class normalPoolViewController: UIViewController,HttpProtocol,UITableViewDataSou
         label1.numberOfLines = 0
         label1.lineBreakMode = NSLineBreakMode.ByWordWrapping
         label1.text = rowData["content"] as NSString
-        
         var label2 = cell?.viewWithTag(cellLbl2) as UILabel
         label2.text = rowData["user"]?["uname"] as NSString
-        
         var label3 = cell?.viewWithTag(cellLbl3) as UILabel
         //时间格式转换
         var outputFormat = NSDateFormatter()
@@ -161,11 +165,13 @@ class normalPoolViewController: UIViewController,HttpProtocol,UITableViewDataSou
         }
     }
     
-    func getLoginInfo(sign: String) {
-        self.sign = sign
-    }
     //返回按钮
     @IBAction func close(segue: UIStoryboardSegue){
+    }
+    
+    func getSign(sign: String) {
+//        self.sign = sign
+        println(sign)
     }
 }
 
