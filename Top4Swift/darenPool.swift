@@ -10,16 +10,18 @@ import UIKit
 
 class darenPool: UIViewController,HttpProtocol,UITableViewDataSource,UITableViewDelegate {
     
-    var timeLineUrl = "http://top.mogujie.com/top/zadmin/app/daren?sign=MIoTSY7txEI7opexh1Co/gIWRTNYMYpC2Q39CSheb1fJQ5/fB3UKOUSeqJOV0PhT+Oshj9xngY2kCKJVYiNVJw==&_adid=99000537220553"
+    var timeLineUrl = "http://top.mogujie.com/top/zadmin/app/daren?_adid=99000537220553"
     
     @IBOutlet weak var tableView: UITableView!
 
     var eHttp: HttpController = HttpController()
+    var base: baseClass = baseClass()
     var tmpListData: NSMutableArray = NSMutableArray()
     var listData: NSMutableArray = NSMutableArray()
     var page = 1 //page
     var imageCache = Dictionary<String,UIImage>()
     var tid: String = ""
+    var sign: String = ""
     
     let cellImg = 1
     let cellLbl1 = 2
@@ -65,7 +67,12 @@ class darenPool: UIViewController,HttpProtocol,UITableViewDataSource,UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //获取sign
+        self.sign = base.cacheGetString("sign")
+        
         eHttp.delegate = self
+        self.timeLineUrl = self.timeLineUrl + "&sign=" + self.sign
         eHttp.get(self.timeLineUrl)
         self.setupRefresh()
     }
@@ -158,6 +165,6 @@ class darenPool: UIViewController,HttpProtocol,UITableViewDataSource,UITableView
     }
     //返回按钮
     @IBAction func close(segue: UIStoryboardSegue){
-    }
+    }    
 }
 

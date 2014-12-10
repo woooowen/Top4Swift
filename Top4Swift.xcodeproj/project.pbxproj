@@ -17,6 +17,7 @@
 		1A2C224D1A286C550022B730 /* RefreshHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C22461A286C550022B730 /* RefreshHeaderView.swift */; };
 		1A2C224E1A286C550022B730 /* UIScrollView+Refresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C22471A286C550022B730 /* UIScrollView+Refresh.swift */; };
 		1A2C22501A28763A0022B730 /* detailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C224F1A28763A0022B730 /* detailViewController.swift */; };
+		1A59075C1A37F2570026237D /* baseClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A59075B1A37F2570026237D /* baseClass.swift */; };
 		1A7C4AE71A1E036200104563 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C4AE61A1E036200104563 /* LoginController.swift */; };
 		1A7C4AE91A1E0B4100104563 /* normalPoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C4AE81A1E0B4100104563 /* normalPoolViewController.swift */; };
 		1A7C4AEB1A1E0BB800104563 /* darenPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C4AEA1A1E0BB800104563 /* darenPool.swift */; };
@@ -103,6 +104,7 @@
 		1A2C22471A286C550022B730 /* UIScrollView+Refresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Refresh.swift"; sourceTree = "<group>"; };
 		1A2C224F1A28763A0022B730 /* detailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = detailViewController.swift; sourceTree = "<group>"; };
 		1A3F0BBF1A30BAF100436356 /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SwiftyJSON.xcodeproj; sourceTree = SOURCE_ROOT; };
+		1A59075B1A37F2570026237D /* baseClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = baseClass.swift; sourceTree = "<group>"; };
 		1A7C4AE61A1E036200104563 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		1A7C4AE81A1E0B4100104563 /* normalPoolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = normalPoolViewController.swift; path = ../normalPoolViewController.swift; sourceTree = "<group>"; };
 		1A7C4AEA1A1E0BB800104563 /* darenPool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = darenPool.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				1A2C224F1A28763A0022B730 /* detailViewController.swift */,
 				1A1341081A2DDE7A0039D4BD /* SwiftyJSON.h */,
 				1ACE6B1B1A36E37B00FBBB8C /* tabBarViewController.swift */,
+				1A59075B1A37F2570026237D /* baseClass.swift */,
 			);
 			path = Top4Swift;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				1A2C224B1A286C550022B730 /* RefreshConst.swift in Sources */,
 				1A2C224D1A286C550022B730 /* RefreshHeaderView.swift in Sources */,
 				1ACE6B1C1A36E37B00FBBB8C /* tabBarViewController.swift in Sources */,
+				1A59075C1A37F2570026237D /* baseClass.swift in Sources */,
 				1A2C22491A286C550022B730 /* Refresh.swift in Sources */,
 				1AEAB75E1A1B65B400D13AD6 /* ViewController.swift in Sources */,
 				1A2C224C1A286C550022B730 /* RefreshFooterView.swift in Sources */,
