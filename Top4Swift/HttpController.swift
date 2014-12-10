@@ -20,8 +20,7 @@ class HttpController: NSObject{
                 println(error)
             }
         })
-    }
-    
+    }    
     //json post方法
     func post(url: String ,params: NSDictionary,callback: (NSDictionary) -> Void) {
         var nsUrl: NSURL = NSURL(string: url)!

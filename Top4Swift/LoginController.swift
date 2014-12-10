@@ -33,11 +33,13 @@ class LoginController: UIViewController,HttpProtocol{
             if(data["status"]?["code"] as NSNumber == 1001){
                 code = true
             }
+
             if(code){
                 //存储cache
                 self.base.cacheSetString("sign", value: data["result"]?["sign"] as String)
                 self.performSegueWithIdentifier("login", sender: self)
             }else{
+                //app日志
                 println(data)
             }
         })
