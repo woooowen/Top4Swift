@@ -39,7 +39,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6Ly-wB-hSY">
-                                <rect key="frame" x="124" y="250" width="38" height="30"/>
+                                <rect key="frame" x="120" y="250" width="150" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -66,10 +66,10 @@
             <objects>
                 <tabBarController id="1LC-kH-c4K" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="E5o-iu-mGc">
+                    <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" id="E5o-iu-mGc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" cocoaTouchSystemColor="darkTextColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="Qd5-to-T2W" kind="relationship" relationship="viewControllers" id="YKb-D3-fx0"/>
@@ -139,7 +139,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="普通池子" id="Wce-kv-4qn"/>
+                    <tabBarItem key="tabBarItem" title="普通池子" image="normal" id="Wce-kv-4qn"/>
                     <connections>
                         <outlet property="tableView" destination="FyD-mZ-oYU" id="I3X-2f-pk6"/>
                         <segue destination="lkZ-hE-o0Y" kind="modal" identifier="detail" id="gH1-4y-9X2"/>
@@ -206,7 +206,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="达人池子" id="Xyc-cm-EJD"/>
+                    <tabBarItem key="tabBarItem" title="达人池子" image="user-alt" id="Xyc-cm-EJD"/>
                     <connections>
                         <outlet property="tableView" destination="juZ-0N-vSr" id="hzo-y8-11F"/>
                         <segue destination="lkZ-hE-o0Y" kind="modal" identifier="detail" id="Fhu-Nm-sYO"/>
@@ -273,7 +273,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="复审池子" id="nI9-Ss-KIE"/>
+                    <tabBarItem key="tabBarItem" title="复审池子" image="user-plus" id="nI9-Ss-KIE"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="b2D-I4-mgt" id="gDO-qs-Z6W"/>
@@ -341,7 +341,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="已推荐" id="406-l8-vrO"/>
+                    <tabBarItem key="tabBarItem" title="已推荐" image="heart" id="406-l8-vrO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="mDZ-XD-Kkr" id="j26-Bg-t2c"/>
@@ -439,12 +439,18 @@
             <point key="canvasLocation" x="1490" y="310"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="heart" width="35" height="30"/>
+        <image name="normal" width="30" height="30"/>
+        <image name="user-alt" width="22" height="30"/>
+        <image name="user-plus" width="30" height="32"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="gH1-4y-9X2"/>
+        <segue reference="7tm-BZ-9ae"/>
     </inferredMetricsTieBreakers>
 </document>
