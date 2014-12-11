@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1A02A1BC1A30C08B00AA1006 /* SwiftyJSON.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 1A3F0BCB1A30BAF100436356 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A1341071A2DDCDC0039D4BD /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1341061A2DDCDC0039D4BD /* SwiftyJSON.swift */; };
-		1A2C22481A286C550022B730 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A2C22411A286C550022B730 /* arrow@2x.png */; };
 		1A2C22491A286C550022B730 /* Refresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C22421A286C550022B730 /* Refresh.swift */; };
 		1A2C224A1A286C550022B730 /* RefreshBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C22431A286C550022B730 /* RefreshBaseView.swift */; };
 		1A2C224B1A286C550022B730 /* RefreshConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C22441A286C550022B730 /* RefreshConst.swift */; };
@@ -95,7 +94,6 @@
 /* Begin PBXFileReference section */
 		1A1341061A2DDCDC0039D4BD /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		1A1341081A2DDE7A0039D4BD /* SwiftyJSON.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyJSON.h; sourceTree = "<group>"; };
-		1A2C22411A286C550022B730 /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
 		1A2C22421A286C550022B730 /* Refresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Refresh.swift; sourceTree = "<group>"; };
 		1A2C22431A286C550022B730 /* RefreshBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshBaseView.swift; sourceTree = "<group>"; };
 		1A2C22441A286C550022B730 /* RefreshConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshConst.swift; sourceTree = "<group>"; };
@@ -145,7 +143,6 @@
 		1A2C22401A286C550022B730 /* Refresh */ = {
 			isa = PBXGroup;
 			children = (
-				1A2C22411A286C550022B730 /* arrow@2x.png */,
 				1A2C22421A286C550022B730 /* Refresh.swift */,
 				1A2C22431A286C550022B730 /* RefreshBaseView.swift */,
 				1A2C22441A286C550022B730 /* RefreshConst.swift */,
@@ -355,7 +352,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A2C22481A286C550022B730 /* arrow@2x.png in Resources */,
 				1AEAB7661A1B65B400D13AD6 /* LaunchScreen.xib in Resources */,
 				1ACE50C51A39F6EE00049E8B /* Images.xcassets in Resources */,
 				1ACE6B1A1A36DCE700FBBB8C /* Main.storyboard in Resources */,
@@ -444,6 +440,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -486,6 +483,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -521,6 +519,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Top4Swift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -532,6 +531,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Top4Swift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
