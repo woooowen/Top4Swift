@@ -23,7 +23,7 @@
 		1A7C4AEB1A1E0BB800104563 /* darenPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C4AEA1A1E0BB800104563 /* darenPool.swift */; };
 		1A7C4AED1A1E0C4500104563 /* reviewPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C4AEC1A1E0C4500104563 /* reviewPool.swift */; };
 		1A7C4AEF1A1E0C7200104563 /* onlinePool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C4AEE1A1E0C7200104563 /* onlinePool.swift */; };
-		1ACE50C51A39F6EE00049E8B /* Images 23-48-00-503.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ACE50C41A39F6EE00049E8B /* Images 23-48-00-503.xcassets */; };
+		1ACE50C51A39F6EE00049E8B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ACE50C41A39F6EE00049E8B /* Images.xcassets */; };
 		1ACE6B1A1A36DCE700FBBB8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ACE6B181A36DCE700FBBB8C /* Main.storyboard */; };
 		1ACE6B1C1A36E37B00FBBB8C /* tabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACE6B1B1A36E37B00FBBB8C /* tabBarViewController.swift */; };
 		1AEAB75C1A1B65B400D13AD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEAB75B1A1B65B400D13AD6 /* AppDelegate.swift */; };
@@ -110,7 +110,7 @@
 		1A7C4AEA1A1E0BB800104563 /* darenPool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = darenPool.swift; sourceTree = "<group>"; };
 		1A7C4AEC1A1E0C4500104563 /* reviewPool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = reviewPool.swift; sourceTree = "<group>"; };
 		1A7C4AEE1A1E0C7200104563 /* onlinePool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = onlinePool.swift; sourceTree = "<group>"; };
-		1ACE50C41A39F6EE00049E8B /* Images 23-48-00-503.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images 23-48-00-503.xcassets"; sourceTree = "<group>"; };
+		1ACE50C41A39F6EE00049E8B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1ACE6B191A36DCE700FBBB8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1ACE6B1B1A36E37B00FBBB8C /* tabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tabBarViewController.swift; sourceTree = "<group>"; };
 		1AEAB7561A1B65B400D13AD6 /* Top4Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Top4Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -188,7 +188,7 @@
 		1AEAB7581A1B65B400D13AD6 /* Top4Swift */ = {
 			isa = PBXGroup;
 			children = (
-				1ACE50C41A39F6EE00049E8B /* Images 23-48-00-503.xcassets */,
+				1ACE50C41A39F6EE00049E8B /* Images.xcassets */,
 				1ACE6B181A36DCE700FBBB8C /* Main.storyboard */,
 				1A3F0BBF1A30BAF100436356 /* SwiftyJSON.xcodeproj */,
 				1A1341061A2DDCDC0039D4BD /* SwiftyJSON.swift */,
@@ -357,7 +357,7 @@
 			files = (
 				1A2C22481A286C550022B730 /* arrow@2x.png in Resources */,
 				1AEAB7661A1B65B400D13AD6 /* LaunchScreen.xib in Resources */,
-				1ACE50C51A39F6EE00049E8B /* Images 23-48-00-503.xcassets in Resources */,
+				1ACE50C51A39F6EE00049E8B /* Images.xcassets in Resources */,
 				1ACE6B1A1A36DCE700FBBB8C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
