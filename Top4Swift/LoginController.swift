@@ -35,14 +35,17 @@ class LoginController: UIViewController,HttpProtocol{
             if(data["status"]?["code"] as NSNumber == 1001){
                 code = true
             }
-
             if(code){
                 //存储cache
                 self.base.cacheSetString("sign", value: data["result"]?["sign"] as String)
                 self.performSegueWithIdentifier("login", sender: self)
             }else{
                 //app日志
-                println(data)
+                //错误判断,弹出框错误提示
+                let code = data["status"]?["code"] as NSNumber
+                let msg = data["status"]?["msg"] as String
+                let alert: UIAlertView = UIAlertView(title: "登陆失败", message: msg, delegate: self, cancelButtonTitle: "OK")
+                alert.show()
             }
         })
     }
