@@ -18,6 +18,8 @@ class LoginController: UIViewController,HttpProtocol{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //加载LaunchImage之后停止3秒钟,用来显示炫酷launchImage而装x
+        NSThread.sleepForTimeInterval(3.0)
     }
     
     override func didReceiveMemoryWarning() {

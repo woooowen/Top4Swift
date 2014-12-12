@@ -187,12 +187,12 @@
 			children = (
 				1ACE50C41A39F6EE00049E8B /* Images.xcassets */,
 				1ACE6B181A36DCE700FBBB8C /* Main.storyboard */,
+				1AEAB7641A1B65B400D13AD6 /* LaunchScreen.xib */,
 				1A3F0BBF1A30BAF100436356 /* SwiftyJSON.xcodeproj */,
 				1A1341061A2DDCDC0039D4BD /* SwiftyJSON.swift */,
 				1A2C22401A286C550022B730 /* Refresh */,
 				1AEAB75B1A1B65B400D13AD6 /* AppDelegate.swift */,
 				1AEAB75D1A1B65B400D13AD6 /* ViewController.swift */,
-				1AEAB7641A1B65B400D13AD6 /* LaunchScreen.xib */,
 				1AEAB7591A1B65B400D13AD6 /* Supporting Files */,
 				1AEAB77B1A1B660400D13AD6 /* HttpController.swift */,
 				1A7C4AE61A1E036200104563 /* LoginController.swift */,
