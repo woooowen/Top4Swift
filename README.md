@@ -26,5 +26,4 @@ Top4Swift
 ###to do list
 
   * 搜索
-  * 友好的提示框
-  * 分类
+  * 分类 ing
