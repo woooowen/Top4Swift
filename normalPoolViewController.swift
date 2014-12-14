@@ -164,5 +164,10 @@ class normalPoolViewController: UIViewController,HttpProtocol,UITableViewDataSou
     //返回按钮
     @IBAction func close(segue: UIStoryboardSegue){
     }
+    
+    @IBAction func toggleSideMenu(sender: AnyObject) {
+        toggleSideMenuView()
+    }
+
 }
 

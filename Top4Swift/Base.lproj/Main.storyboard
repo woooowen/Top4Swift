@@ -52,7 +52,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CDl-mL-n10" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-635" y="362"/>
+            <point key="canvasLocation" x="-877" y="310"/>
+        </scene>
+        <!--普通池子-->
+        <scene sceneID="nuK-3O-Y8v">
+            <objects>
+                <navigationController id="Bx6-NT-Wnx" customClass="MyNavigationController" customModule="Top4Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="普通池子" image="normal" id="RlP-IJ-jYO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Zi-kL-OK4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Lv6-St-B94" kind="relationship" relationship="rootViewController" id="1EV-S2-23A"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6OI-uf-2bn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-177" y="-629"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="EkZ-IS-XKp">
@@ -67,8 +84,7 @@
                     <connections>
                         <segue destination="Qd5-to-T2W" kind="relationship" relationship="viewControllers" id="YKb-D3-fx0"/>
                         <segue destination="9dc-WB-Sug" kind="relationship" relationship="viewControllers" id="ahD-qK-q3q"/>
-                        <segue destination="KKs-pZ-szv" kind="relationship" relationship="viewControllers" id="HtZ-Oi-09I"/>
-                        <segue destination="Lv6-St-B94" kind="relationship" relationship="viewControllers" id="cRT-F3-8PC"/>
+                        <segue destination="Bx6-NT-Wnx" kind="relationship" relationship="viewControllers" id="ob7-Fa-pgp"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tdl-NN-jeH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -78,7 +94,7 @@
         <!--普通池子-->
         <scene sceneID="yfC-Qt-42r">
             <objects>
-                <viewController id="Lv6-St-B94" customClass="normalPoolViewController" customModule="Top4Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController1" id="Lv6-St-B94" customClass="normalPoolViewController" customModule="Top4Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ltf-dL-5zO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -133,6 +149,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="普通池子" image="normal" id="Wce-kv-4qn"/>
+                    <navigationItem key="navigationItem" id="CWY-Y5-oJr">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="d2x-eB-pLO">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="a2n-0M-9FO">
+                                <rect key="frame" x="-23" y="-15" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="分类">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleSideMenu:" destination="Lv6-St-B94" eventType="touchUpInside" id="mBA-Re-ACz"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="FyD-mZ-oYU" id="I3X-2f-pk6"/>
                         <segue destination="lkZ-hE-o0Y" kind="modal" identifier="detail" id="gH1-4y-9X2"/>
@@ -447,6 +477,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="7tm-BZ-9ae"/>
+        <segue reference="gH1-4y-9X2"/>
     </inferredMetricsTieBreakers>
 </document>

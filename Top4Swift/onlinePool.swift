@@ -166,5 +166,8 @@ class onlinePool: UIViewController,HttpProtocol,UITableViewDataSource,UITableVie
     //返回按钮
     @IBAction func close(segue: UIStoryboardSegue){
     }
+    @IBAction func toggleSideMenu(sender: AnyObject) {
+        toggleSideMenuView()
+    }
 }
 
