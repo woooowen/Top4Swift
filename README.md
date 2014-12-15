@@ -25,5 +25,10 @@ Top4Swift
   
 ###to do list
 
+<<<<<<< HEAD
   * 搜索		ing
   * 分类		done
+=======
+  * 搜索
+  * 分类 ing
+>>>>>>> FETCH_HEAD
