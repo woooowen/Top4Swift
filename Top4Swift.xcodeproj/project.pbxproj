@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		1A02A1BC1A30C08B00AA1006 /* SwiftyJSON.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 1A3F0BCB1A30BAF100436356 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A1341071A2DDCDC0039D4BD /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1341061A2DDCDC0039D4BD /* SwiftyJSON.swift */; };
-		1A1D93951A3E85BD008A1795 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1D93941A3E85BD008A1795 /* ViewController.swift */; };
+		1A1D93951A3E85BD008A1795 /* searchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1D93941A3E85BD008A1795 /* searchViewController.swift */; };
 		1A2C22491A286C550022B730 /* Refresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C22421A286C550022B730 /* Refresh.swift */; };
 		1A2C224A1A286C550022B730 /* RefreshBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C22431A286C550022B730 /* RefreshBaseView.swift */; };
 		1A2C224B1A286C550022B730 /* RefreshConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C22441A286C550022B730 /* RefreshConst.swift */; };
@@ -98,7 +98,7 @@
 /* Begin PBXFileReference section */
 		1A1341061A2DDCDC0039D4BD /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		1A1341081A2DDE7A0039D4BD /* SwiftyJSON.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyJSON.h; sourceTree = "<group>"; };
-		1A1D93941A3E85BD008A1795 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1A1D93941A3E85BD008A1795 /* searchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = searchViewController.swift; sourceTree = "<group>"; };
 		1A2C22421A286C550022B730 /* Refresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Refresh.swift; sourceTree = "<group>"; };
 		1A2C22431A286C550022B730 /* RefreshBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshBaseView.swift; sourceTree = "<group>"; };
 		1A2C22441A286C550022B730 /* RefreshConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshConst.swift; sourceTree = "<group>"; };
@@ -203,7 +203,7 @@
 		1AEAB7581A1B65B400D13AD6 /* Top4Swift */ = {
 			isa = PBXGroup;
 			children = (
-				1A1D93941A3E85BD008A1795 /* ViewController.swift */,
+				1A1D93941A3E85BD008A1795 /* searchViewController.swift */,
 				1A9BF1971A3D7B51001E28AD /* Main.storyboard */,
 				1A9BF18A1A3D783F001E28AD /* MyMenuTableViewController.swift */,
 				1A9BF18B1A3D783F001E28AD /* MyNavigationController.swift */,
@@ -397,7 +397,7 @@
 				1A2C224D1A286C550022B730 /* RefreshHeaderView.swift in Sources */,
 				1ACE6B1C1A36E37B00FBBB8C /* tabBarViewController.swift in Sources */,
 				1A59075C1A37F2570026237D /* baseClass.swift in Sources */,
-				1A1D93951A3E85BD008A1795 /* ViewController.swift in Sources */,
+				1A1D93951A3E85BD008A1795 /* searchViewController.swift in Sources */,
 				1A9BF18D1A3D783F001E28AD /* MyMenuTableViewController.swift in Sources */,
 				1A2C22491A286C550022B730 /* Refresh.swift in Sources */,
 				1A2C224C1A286C550022B730 /* RefreshFooterView.swift in Sources */,
