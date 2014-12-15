@@ -31,4 +31,7 @@ Top4Swift
 =======
   * 搜索
   * 分类 ing
+<<<<<<< HEAD
+>>>>>>> FETCH_HEAD
+=======
 >>>>>>> FETCH_HEAD
