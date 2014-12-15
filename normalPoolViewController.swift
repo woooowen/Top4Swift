@@ -24,6 +24,8 @@ class normalPoolViewController: UIViewController,HttpProtocol,UITableViewDataSou
     var imageCache = Dictionary<String,UIImage>()
     var tid: String = ""
     var sign: String = ""
+    var isCheck: String = ""
+    
     
     let cellImg = 1
     let cellLbl1 = 2
@@ -68,12 +70,17 @@ class normalPoolViewController: UIViewController,HttpProtocol,UITableViewDataSou
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //传入是否看过参数isCheck
+        if(self.isCheck == "1"){
+            self.timeLineUrl = self.timeLineUrl + "&isCheck=" + self.isCheck
+        }
         
         //获取sign
         self.sign = base.cacheGetString("sign")
-    
+        if(self.sign != ""){
+            self.timeLineUrl = self.timeLineUrl + "&sign=" + self.sign
+        }
         eHttp.delegate = self
-        self.timeLineUrl = self.timeLineUrl + "&sign=" + self.sign
         eHttp.get(self.timeLineUrl)
         self.setupRefresh()
     }
