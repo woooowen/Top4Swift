@@ -71,7 +71,7 @@ class normalPoolViewController: UIViewController,HttpProtocol,UITableViewDataSou
         
         //获取sign
         self.sign = base.cacheGetString("sign")
-        
+    
         eHttp.delegate = self
         self.timeLineUrl = self.timeLineUrl + "&sign=" + self.sign
         eHttp.get(self.timeLineUrl)
