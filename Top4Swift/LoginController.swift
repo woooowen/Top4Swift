@@ -31,7 +31,7 @@ class LoginController: UIViewController,HttpProtocol{
         let url = "http://top.mogujie.com/app_top_v151_login/mobilelogin?_swidth=720&_channel=NAOtopGrey&_atype=android&_sdklevel=18&_network=2&_fs=NAOtopGrey151&_did=99000537220553&_aver=150&_source=NAOtopGrey151"
         let params = ["mobile" : self.Uname.text , "pwd" : self.Pwd.text]
 
-        self.performSegueWithIdentifier("login", sender: self)
+//        self.performSegueWithIdentifier("login", sender: self)
 
         eHttp.post(url, params: params, callback: {(data: NSDictionary) -> Void in
             var code = false

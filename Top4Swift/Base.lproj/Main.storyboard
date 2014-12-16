@@ -74,7 +74,8 @@
         <!--Tab Bar Controller-->
         <scene sceneID="EkZ-IS-XKp">
             <objects>
-                <tabBarController id="1LC-kH-c4K" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="navViewController" id="1LC-kH-c4K" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="5tj-fi-twv"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" id="E5o-iu-mGc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -705,7 +706,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="7tm-BZ-9ae"/>
+        <segue reference="Fhu-Nm-sYO"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
 </document>
