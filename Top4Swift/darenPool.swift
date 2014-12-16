@@ -71,12 +71,16 @@ class darenPool: UIViewController,HttpProtocol,UITableViewDataSource,UITableView
         if(self.isCheck == "1"){
             self.timeLineUrl = self.timeLineUrl + "&isCheck=" + self.isCheck
         }
-        
         //获取sign
         self.sign = base.cacheGetString("sign")
+        if(self.sign != ""){
+            self.timeLineUrl = self.timeLineUrl + "&sign=" + self.sign
+        }else{
+            let alert: UIAlertView = UIAlertView(title: "操作错误", message: "请先登录", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
+        }
         
         eHttp.delegate = self
-        self.timeLineUrl = self.timeLineUrl + "&sign=" + self.sign
         eHttp.get(self.timeLineUrl)
         self.setupRefresh()
     }
@@ -155,7 +159,7 @@ class darenPool: UIViewController,HttpProtocol,UITableViewDataSource,UITableView
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "detail" {
             var instance = segue.destinationViewController as detailViewController
-            instance.timeLineUrl = self.tid
+            instance.tid = self.tid
         }
     }
     

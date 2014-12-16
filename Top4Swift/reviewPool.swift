@@ -149,7 +149,7 @@ class reviewPool: UIViewController,HttpProtocol,UITableViewDataSource,UITableVie
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "detail" {
             var instance = segue.destinationViewController as detailViewController
-            instance.timeLineUrl = self.tid
+            instance.tid = self.tid
         }
     }
     

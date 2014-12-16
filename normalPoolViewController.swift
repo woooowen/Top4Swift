@@ -26,12 +26,10 @@ class normalPoolViewController: UIViewController,HttpProtocol,UITableViewDataSou
     var sign: String = ""
     var isCheck: String = ""
     
-    
     let cellImg = 1
     let cellLbl1 = 2
     let cellLbl2 = 3
     let cellLbl3 = 4
-    
     let refreshControl = UIRefreshControl()
     
     //Refresh func
@@ -74,12 +72,15 @@ class normalPoolViewController: UIViewController,HttpProtocol,UITableViewDataSou
         if(self.isCheck == "1"){
             self.timeLineUrl = self.timeLineUrl + "&isCheck=" + self.isCheck
         }
-        
         //获取sign
         self.sign = base.cacheGetString("sign")
         if(self.sign != ""){
             self.timeLineUrl = self.timeLineUrl + "&sign=" + self.sign
+        }else{
+            let alert: UIAlertView = UIAlertView(title: "操作错误", message: "请先登录", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
         }
+
         eHttp.delegate = self
         eHttp.get(self.timeLineUrl)
         self.setupRefresh()
@@ -147,7 +148,7 @@ class normalPoolViewController: UIViewController,HttpProtocol,UITableViewDataSou
     
     //点击事件处理
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
-        let trueData: NSDictionary = self.listData[indexPath.row] as NSDictionary
+        let trueData: NSDictionary = self.tmpListData[indexPath.row] as NSDictionary
         self.tid = trueData["tid"] as NSString
         self.performSegueWithIdentifier("detail", sender: self)
     }
@@ -155,7 +156,7 @@ class normalPoolViewController: UIViewController,HttpProtocol,UITableViewDataSou
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "detail" {
             var instance = segue.destinationViewController as detailViewController
-            instance.timeLineUrl = self.tid
+            instance.tid = self.tid
         }
     }
     

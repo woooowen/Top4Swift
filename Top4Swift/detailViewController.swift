@@ -20,15 +20,16 @@ class detailViewController: UIViewController,UIWebViewDelegate,HttpProtocol {
     @IBOutlet weak var offShelfBtn: UIButton!
     
     var timeLineUrl: String = ""
-    
+    var tid: String = ""
     var eHttp: HttpController = HttpController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        webView.delegate = self
-        timeLineUrl = "http://top.mogujie.com/top/share/note?tid=" + timeLineUrl
+        timeLineUrl = "http://top.mogujie.com/top/share/note?tid=" + self.tid
+        println(self.timeLineUrl)
         var url = NSURL(string: self.timeLineUrl)
         var request = NSURLRequest(URL: url!)
+        webView.delegate = self
         webView.loadRequest(request)
     }
     
