@@ -26,7 +26,6 @@ class detailViewController: UIViewController,UIWebViewDelegate,HttpProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         timeLineUrl = "http://top.mogujie.com/top/share/note?tid=" + self.tid
-        println(self.timeLineUrl)
         var url = NSURL(string: self.timeLineUrl)
         var request = NSURLRequest(URL: url!)
         webView.delegate = self

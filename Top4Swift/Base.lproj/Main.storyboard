@@ -47,6 +47,7 @@
                     <connections>
                         <outlet property="Pwd" destination="Pyi-Ns-RN3" id="Y8Q-ZG-Ylr"/>
                         <outlet property="Uname" destination="1ye-m9-MlP" id="pZ5-dH-8gz"/>
+                        <outlet property="loginBtn" destination="6Ly-wB-hSY" id="Slg-Si-Ogv"/>
                         <segue destination="1LC-kH-c4K" kind="modal" identifier="login" id="1s6-kM-h0r"/>
                     </connections>
                 </viewController>

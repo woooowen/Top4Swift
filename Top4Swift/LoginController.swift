@@ -16,6 +16,7 @@ class LoginController: UIViewController,HttpProtocol{
     var eHttp: HttpController = HttpController()
     var base: baseClass = baseClass()
     
+    @IBOutlet weak var loginBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         //加载LaunchImage之后停止2秒钟,用来显示炫酷launchImage而装x,有的时候的确太长了点.2秒钟好了
@@ -32,8 +33,12 @@ class LoginController: UIViewController,HttpProtocol{
         let params = ["mobile" : self.Uname.text , "pwd" : self.Pwd.text]
         
 //        self.performSegueWithIdentifier("login", sender: self) //直接跳转
+//        点击之后,先讲按钮disable,更改背景图片,防止多次点击
+        loginBtn.setImage(UIImage(named: "login-off"), forState: UIControlState.Normal)
+        loginBtn.enabled = false
         
         eHttp.post(url, params: params, callback: {(data: NSDictionary) -> Void in
+            
             var code = false
             if(data["status"]?["code"] as NSNumber == 1001){
                 code = true                
@@ -45,6 +50,9 @@ class LoginController: UIViewController,HttpProtocol{
             }else{
                 //app日志
                 //错误判断,弹出框错误提示
+                self.loginBtn.setImage(UIImage(named: "login"), forState: UIControlState.Normal)
+                self.loginBtn.enabled = true
+
                 let code = data["status"]?["code"] as NSNumber
                 let msg = data["status"]?["msg"] as String
                 let alert: UIAlertView = UIAlertView(title: "登陆失败", message: msg, delegate: self, cancelButtonTitle: "OK")
