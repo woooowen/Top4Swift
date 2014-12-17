@@ -28,6 +28,7 @@
 		1A9BF18E1A3D783F001E28AD /* MyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9BF18B1A3D783F001E28AD /* MyNavigationController.swift */; };
 		1A9BF1991A3D7B51001E28AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A9BF1971A3D7B51001E28AD /* Main.storyboard */; };
 		1AAC67FB1A4125BB0019076C /* normalPoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAC67FA1A4125BB0019076C /* normalPoolViewController.swift */; };
+		1AAC68081A41A8340019076C /* TopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAC68071A41A8340019076C /* TopCollectionViewCell.swift */; };
 		1ACE50C51A39F6EE00049E8B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ACE50C41A39F6EE00049E8B /* Images.xcassets */; };
 		1ACE6B1C1A36E37B00FBBB8C /* tabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACE6B1B1A36E37B00FBBB8C /* tabBarViewController.swift */; };
 		1AEAB75C1A1B65B400D13AD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEAB75B1A1B65B400D13AD6 /* AppDelegate.swift */; };
@@ -118,6 +119,7 @@
 		1A9BF18B1A3D783F001E28AD /* MyNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyNavigationController.swift; path = "../../../Downloads/ENSwiftSideMenu-master 2/Example/SwiftSideMenu/MyNavigationController.swift"; sourceTree = "<group>"; };
 		1A9BF1981A3D7B51001E28AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1AAC67FA1A4125BB0019076C /* normalPoolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = normalPoolViewController.swift; sourceTree = "<group>"; };
+		1AAC68071A41A8340019076C /* TopCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopCollectionViewCell.swift; sourceTree = "<group>"; };
 		1ACE50C41A39F6EE00049E8B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1ACE6B1B1A36E37B00FBBB8C /* tabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tabBarViewController.swift; sourceTree = "<group>"; };
 		1AEAB7561A1B65B400D13AD6 /* Top4Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Top4Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -225,6 +227,7 @@
 				1A1341081A2DDE7A0039D4BD /* SwiftyJSON.h */,
 				1ACE6B1B1A36E37B00FBBB8C /* tabBarViewController.swift */,
 				1A59075B1A37F2570026237D /* baseClass.swift */,
+				1AAC68071A41A8340019076C /* TopCollectionViewCell.swift */,
 			);
 			path = Top4Swift;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 				1A1341071A2DDCDC0039D4BD /* SwiftyJSON.swift in Sources */,
 				1AEAB77C1A1B660400D13AD6 /* HttpController.swift in Sources */,
 				1A7C4AED1A1E0C4500104563 /* reviewPool.swift in Sources */,
+				1AAC68081A41A8340019076C /* TopCollectionViewCell.swift in Sources */,
 				1A7C4AEB1A1E0BB800104563 /* darenPool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
