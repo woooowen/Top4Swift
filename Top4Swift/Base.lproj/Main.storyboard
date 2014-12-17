@@ -153,7 +153,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="普通/达人池子" image="normal" id="Wce-kv-4qn"/>
                     <navigationItem key="navigationItem" id="CWY-Y5-oJr">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="d2x-eB-pLO">
+                        <barButtonItem key="leftBarButtonItem" id="d2x-eB-pLO">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="a2n-0M-9FO">
                                 <rect key="frame" x="16" y="9" width="35" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -239,7 +239,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="达人池子" image="user-alt" id="Xyc-cm-EJD"/>
                     <navigationItem key="navigationItem" id="6qi-SO-ixY">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="5lT-kz-gph">
+                        <barButtonItem key="leftBarButtonItem" id="5lT-kz-gph">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="LqO-GE-KKJ">
                                 <rect key="frame" x="16" y="9" width="35" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -547,7 +547,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="达人池子" image="user-alt" id="Jih-g5-lW1"/>
                     <navigationItem key="navigationItem" id="8mK-Jd-70E">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="aQa-z0-bKS">
+                        <barButtonItem key="leftBarButtonItem" id="aQa-z0-bKS">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="Hzb-sq-eb9">
                                 <rect key="frame" x="16" y="9" width="35" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -657,7 +657,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="达人池子" image="user-alt" id="wEI-Zc-hSk"/>
                     <navigationItem key="navigationItem" id="3nX-t7-NYU">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="Fuo-Q4-K5k">
+                        <barButtonItem key="leftBarButtonItem" id="Fuo-Q4-K5k">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="sv1-RJ-tLQ">
                                 <rect key="frame" x="16" y="9" width="35" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -702,7 +702,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="iLV-ca-Cso"/>
+        <segue reference="Fhu-Nm-sYO"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
 </document>
