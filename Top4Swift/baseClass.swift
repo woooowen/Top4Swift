@@ -22,7 +22,4 @@ class baseClass{
         return tmpSign!
     }
 
-
-    
-
 }
