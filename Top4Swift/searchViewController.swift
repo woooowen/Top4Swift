@@ -16,6 +16,7 @@ class searchViewController: UIViewController,UICollectionViewDataSource,HttpProt
     var listData: NSMutableArray = NSMutableArray()
     var page = 1 //page
     var imageCache = Dictionary<String,UIImage>()
+    var imageCacheHeight = Dictionary<String,CGFloat>()
 
     let cellLabelUname = 1
     let cellImg = 2
@@ -49,15 +50,11 @@ class searchViewController: UIViewController,UICollectionViewDataSource,HttpProt
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell{
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("searchCell", forIndexPath: indexPath) as TopCollectionViewCell
-//        cell.cellImage.image = UIImage(named: cellImages[indexPath.row])
-//        image.image = UIImage(named: cellImages[indexPath.row])
-        
         
         var rowData: NSDictionary = self.listData[indexPath.row] as NSDictionary
         
         let imgUrl = rowData["cover"]? as String
         var img = cell.viewWithTag(cellImg) as UIImageView
-//        var img = cell?.viewWithTag(cellImg) as UIImageView
         img.image = UIImage(named: "default.png")
         
         if(imgUrl != ""){
@@ -67,10 +64,13 @@ class searchViewController: UIViewController,UICollectionViewDataSource,HttpProt
                 let request: NSURLRequest = NSURLRequest(URL: imageUrl!)
                 //异步获取
                 NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!,data: NSData!,error: NSError!)-> Void in
-                    println(data)
                     let imgTmp = UIImage(data: data)
                     img.image = imgTmp
+
                     self.imageCache[imgUrl] = imgTmp
+                    self.imageCacheHeight[imgUrl] = imgTmp?.size.height
+                    let imgSize = CGSizeMake(200.0, self.imageCacheHeight[imgUrl]!)
+                    collectionView.sizeThatFits(imgSize)
                 })
             }else{
                 img.image = image
@@ -80,8 +80,6 @@ class searchViewController: UIViewController,UICollectionViewDataSource,HttpProt
         //标题
         var label1 = cell.viewWithTag(cellLabelUname) as UILabel
         label1.text = rowData["user"]?["uname"] as NSString
-        
-        
         
         return cell
     }
@@ -102,7 +100,7 @@ class searchViewController: UIViewController,UICollectionViewDataSource,HttpProt
     func searchBarSearchButtonClicked(searchBar: UISearchBar){
         //隐藏键盘
         search.resignFirstResponder()
-//        collectionView.hidden = false
+        collectionView.hidden = false
         //开始搜索
 //        let url = "http://top.mogujie.com/app_top_v151_login/mobilelogin?_swidth=720&_channel=NAOtopGrey&_atype=android&_sdklevel=18&_network=2&_fs=NAOtopGrey151&_did=99000537220553&_aver=150&_source=NAOtopGrey151"
 //        let params = ["uname" : search.text]
