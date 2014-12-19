@@ -19,4 +19,13 @@ class TopCollectionViewCell: UICollectionViewCell {
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+    
+    override func preferredLayoutAttributesFittingAttributes(layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes!{
+        let preferredLayoutAttributes = layoutAttributes.copy() as UICollectionViewLayoutAttributes
+
+        return preferredLayoutAttributes
+    }
+    
+
+
 }
