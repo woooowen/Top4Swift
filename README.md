@@ -13,7 +13,11 @@ Top4Swift
 ####Login
 ![LoginImage](http://woowen.qiniudn.com/LoginImage.png)
 
-![icon](http://s7.mogucdn.com/pic/141201/16ywbt_ieygizrqmjsgmy3emqytambqgyyde_320x590.jpg)
+###Main
+![LoginImage](http://woowen.qiniudn.com/total.gif)
+
+###Search
+![icon](http://woowen.qiniudn.com/search.gif)
 
 ###包含功能
 
@@ -23,8 +27,6 @@ Top4Swift
   * webView加载,加载图片loading
   * json get post提交
   * 图片缓存加载
-  
-###to do list
-
-  * 搜索		ing
-  * 分类		done
+  * 搜索
+  * 分类Nav
+  * collectionView布局
