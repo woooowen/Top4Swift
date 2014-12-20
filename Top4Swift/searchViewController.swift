@@ -61,7 +61,6 @@ class searchViewController: UIViewController,UICollectionViewDataSource,UICollec
         })
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -119,10 +118,6 @@ class searchViewController: UIViewController,UICollectionViewDataSource,UICollec
         
         return cell
     }
-//    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int{
-//        return 1
-//    }
-//
     
     //点击cell框事件
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath){
