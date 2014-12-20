@@ -15,49 +15,59 @@ class searchViewController: UIViewController,UICollectionViewDataSource,UICollec
     var listData: NSMutableArray = NSMutableArray()
     var page = 1 //page
     var imageCache = Dictionary<String,UIImage>()
-    var tmpFloat: CGFloat = CGFloat()
+    var tid: String = ""
     
-    //图片尺寸
-    
+    let timeLineUrl = "http://top.mogujie.com/top/zadmin/app/yituijian?_adid=99000537220553&sign=qbruUWHlzmGjgRlHAZAsJpzsBr+PsBvAgpG95SIfyD984P69bAHPOQ7Guz78b3etvg2eC+rpQtsJFSpC0K9dIg=="
     
     let cellLabelUname = 1
     let cellImg = 2
+    let refreshControl = UIRefreshControl()
 
     @IBOutlet weak var search: UISearchBar!
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-//    override func viewWillAppear(animated: Bool) {
-//        super.viewWillAppear(animated)
-//        
-////        self.collectionView.contentInset = ({
-////
-////            var contentInset = self.collectionView.contentInset
-////            //margin-top
-////            contentInset.top = 20
-////            return contentInset
-////        })()
-////        
-////        self.collectionView.scrollIndicatorInsets = ({
-////
-////            var scrollIndicatorInsets = self.collectionView.scrollIndicatorInsets
-////            scrollIndicatorInsets.top = 20
-////            return scrollIndicatorInsets
-////        })()
-//
-//        let width = 150 as CGFloat
-//        let height = 400 as CGFloat
-//        
-//        let flowLayout = self.collectionView.collectionViewLayout as UICollectionViewFlowLayout
-//        flowLayout.estimatedItemSize = CGSizeMake(width, height)
-//    }
-//    
+    //Refresh func
+    func setupRefresh(){
+        self.collectionView.addHeaderWithCallback({
+            let delayInSeconds:Int64 =  1000000000  * 2
+            var popTime:dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW,delayInSeconds)
+            dispatch_after(popTime, dispatch_get_main_queue(), {
+                self.collectionView.reloadData()
+                self.collectionView.headerEndRefreshing()
+            })
+        })
+        
+        self.collectionView.addFooterWithCallback({
+            var nextPage = String(self.page + 1)
+            var tmpTimeLineUrl = self.timeLineUrl + "&page=" + nextPage as NSString
+            self.eHttp.delegate = self
+            self.eHttp.get(tmpTimeLineUrl)
+            let delayInSeconds:Int64 = 1000000000 * 2
+            var popTime:dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW,delayInSeconds)
+            dispatch_after(popTime, dispatch_get_main_queue(), {
+                self.collectionView.footerEndRefreshing()
+                if(self.tmpListData != self.listData){
+                    if(self.tmpListData.count != 0){
+                        var tmpListDataCount = self.tmpListData.count
+                        for(var i:Int = 0; i < tmpListDataCount; i++){
+                            self.listData.addObject(self.tmpListData[i])
+                        }
+                    }
+                    self.collectionView.reloadData()
+                    self.tmpListData.removeAllObjects()
+                }
+            })
+        })
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         //初始化collectionView
         collectionView.hidden = true
+        self.setupRefresh()
     }
     
     override func didReceiveMemoryWarning() {
@@ -116,37 +126,19 @@ class searchViewController: UIViewController,UICollectionViewDataSource,UICollec
     
     //点击cell框事件
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath){
-        println(indexPath.row)
+        let trueData: NSDictionary = self.tmpListData[indexPath.row] as NSDictionary
+        self.tid = trueData["tid"] as NSString
+        self.performSegueWithIdentifier("detail", sender: self)
     }
     
+    //跳转传参方法
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "detail" {
+            var instance = segue.destinationViewController as detailViewController
+            instance.tid = self.tid
+        }
+    }
     
-    
-//    func invalidationContextForPreferredLayoutAttributes(preferredAttributes: UICollectionViewLayoutAttributes, withOriginalAttributes originalAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutInvalidationContext{
-//        let imgSize = CGSizeMake(500.0, 300.0)
-//        let ff = collectionView.contentSize
-//        collectionView.sizeThatFits(imgSize)
-//        //                    println(ff)
-//        let frame = UICollectionViewLayoutInvalidationContext()
-//        frame.contentSizeAdjustment = imgSize
-//        println(111)
-//        return frame
-//        
-//    }
-    
-//    func invalidateItemsAtIndexPaths(indexPaths: NSIndexPath){
-//        println(indexPaths.row)
-//    }
-//
-    //当self-sizing发送变化时,是否更新视图(原布局失效,默认否)
-//    func shouldInvalidateLayoutForPreferredLayoutAttributes(preferredAttributes: UICollectionViewLayoutAttributes, withOriginalAttributes originalAttributes: UICollectionViewLayoutAttributes) ->Bool{
-//        return true
-//    }
-//    
-//     func collectionViewContentSize() -> CGSize{
-//        println(54)
-//        return CGSizeMake(333, 150 * 1.4)
-//    }
-//    
     //cell margin   左右边距
     func collectionView(collectionView: UICollectionView!, layout collectionViewLayout: UICollectionViewLayout!, insetForSectionAtIndex section: Int) -> UIEdgeInsets{
         return UIEdgeInsetsMake(5, 5, 0, 5);
@@ -171,9 +163,9 @@ class searchViewController: UIViewController,UICollectionViewDataSource,UICollec
 //            let msg = data["status"]?["msg"] as String
 //        })
         
-        let url = "http://top.mogujie.com/top/zadmin/app/yituijian?_adid=99000537220553&sign=qbruUWHlzmGjgRlHAZAsJpzsBr+PsBvAgpG95SIfyD984P69bAHPOQ7Guz78b3etvg2eC+rpQtsJFSpC0K9dIg=="
+        
         eHttp.delegate = self
-        eHttp.get(url)
+        eHttp.get(self.timeLineUrl)
     }
     
     func didRecieveResult(result: NSDictionary) {
