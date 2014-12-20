@@ -121,7 +121,7 @@ class searchViewController: UIViewController,UICollectionViewDataSource,UICollec
     
     //点击cell框事件
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath){
-        let trueData: NSDictionary = self.tmpListData[indexPath.row] as NSDictionary
+        let trueData: NSDictionary = self.listData[indexPath.row] as NSDictionary
         self.tid = trueData["tid"] as NSString
         self.performSegueWithIdentifier("detail", sender: self)
     }
@@ -149,15 +149,13 @@ class searchViewController: UIViewController,UICollectionViewDataSource,UICollec
         //隐藏键盘
         search.resignFirstResponder()
         collectionView.hidden = false
-        //开始搜索
-//        let url = "http://top.mogujie.com/app_top_v151_login/mobilelogin?_swidth=720&_channel=NAOtopGrey&_atype=android&_sdklevel=18&_network=2&_fs=NAOtopGrey151&_did=99000537220553&_aver=150&_source=NAOtopGrey151"
+        //开始搜索 由于没有搜索接口,所以使用get方式替代吧.接口近期加上
 //        let params = ["uname" : search.text]
 //        
 //        eHttp.post(url, params: params, callback: {(data: NSDictionary) -> Void in
 //            let code = data["status"]?["code"] as NSNumber
 //            let msg = data["status"]?["msg"] as String
 //        })
-        
         
         eHttp.delegate = self
         eHttp.get(self.timeLineUrl)
