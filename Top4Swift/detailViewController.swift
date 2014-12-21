@@ -19,9 +19,11 @@ class detailViewController: UIViewController,UIWebViewDelegate,HttpProtocol {
     
     @IBOutlet weak var offShelfBtn: UIButton!
     
+    var base: baseClass = baseClass()
     var timeLineUrl: String = ""
     var tid: String = ""
     var eHttp: HttpController = HttpController()
+    var sign: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,8 +70,10 @@ class detailViewController: UIViewController,UIWebViewDelegate,HttpProtocol {
         var btnName = checkBtn.titleForState(UIControlState.Normal)
         if(btnName == "看过"){
             //post 请求api,并且给api传递参数,根据返回值来判断动作执行
-            let url = "http://top.mogujie.com/top/zadmin/app/check?sign=MIoTSY7txEI7opexh1Co/gIWRTNYMYpC2Q39CSheb1fJQ5/fB3UKOUSeqJOV0PhT+Oshj9xngY2kCKJVYiNVJw==&_adid=99000537220553"
-            let params = ["twitterId" : "13sik"]
+            var url = "http://top.mogujie.com/top/zadmin/app/check?_adid=99000537220553"
+            self.sign = base.cacheGetString("sign")
+            url = url + "&sign=" + self.sign
+            let params = ["twitterId" : self.tid]
             eHttp.delegate = self
             eHttp.post(url, params: params,callback: {(data: NSDictionary) -> Void in
                 var tt = false
@@ -79,6 +83,9 @@ class detailViewController: UIViewController,UIWebViewDelegate,HttpProtocol {
                 if(tt){
                     self.checkBtn.setTitle("已看过", forState: UIControlState.Normal)
                     self.checkBtn.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
+                }else{
+                    let alert: UIAlertView = UIAlertView(title: "操作失败", message: "没有权限", delegate: self, cancelButtonTitle: "OK")
+                    alert.show()
                 }
             })
         }
