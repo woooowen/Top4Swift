@@ -16,13 +16,13 @@ class searchViewController: UIViewController,UICollectionViewDataSource,UICollec
     var page = 1 //page
     var imageCache = Dictionary<String,UIImage>()
     var tid: String = ""
-    
-    let timeLineUrl = "http://top.mogujie.com/top/zadmin/app/yituijian?_adid=99000537220553&sign=qbruUWHlzmGjgRlHAZAsJpzsBr+PsBvAgpG95SIfyD984P69bAHPOQ7Guz78b3etvg2eC+rpQtsJFSpC0K9dIg=="
-    
+    var base: baseClass = baseClass()
+    var timeLineUrl = "http://top.mogujie.com/top/zadmin/app/search?_adid=99000537220553"
     let cellLabelUname = 1
     let cellImg = 2
     let refreshControl = UIRefreshControl()
-
+    var sign: String = ""
+    
     @IBOutlet weak var search: UISearchBar!
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -148,15 +148,27 @@ class searchViewController: UIViewController,UICollectionViewDataSource,UICollec
     func searchBarSearchButtonClicked(searchBar: UISearchBar){
         //隐藏键盘
         search.resignFirstResponder()
+        self.listData.removeAllObjects()
+        self.tmpListData.removeAllObjects()
         collectionView.hidden = false
-        //开始搜索 由于没有搜索接口,所以使用get方式替代吧.接口近期加上
-//        let params = ["uname" : search.text]
-//        
-//        eHttp.post(url, params: params, callback: {(data: NSDictionary) -> Void in
-//            let code = data["status"]?["code"] as NSNumber
-//            let msg = data["status"]?["msg"] as String
+        //开始搜索
+        timeLineUrl = "http://top.mogujie.com/top/zadmin/app/search?_adid=99000537220553"
+        //获取sign
+        self.sign = base.cacheGetString("sign")
+        if(self.sign != ""){
+            timeLineUrl = timeLineUrl + "&sign=" + self.sign + "&uname=" + search.text
+        }else{
+            let alert: UIAlertView = UIAlertView(title: "操作错误", message: "请先登录", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
+        }
+        //post方式
+//        eHttp.post(timeLineUrl, params: params, callback: {(data: NSDictionary) -> Void in
+//            if(data["result"]?["list"] != nil && data["result"]?["isEnd"] as NSNumber != 1){
+//                self.tmpListData = data["result"]?["list"] as NSMutableArray //list数据
+//                self.page = data["result"]?["page"] as Int
+//                self.collectionView.reloadData()
+//            }
 //        })
-        
         eHttp.delegate = self
         eHttp.get(self.timeLineUrl)
     }
