@@ -1,10 +1,16 @@
 Top4Swift
 =========
-###Top 后台 Swift版本
-###Ios 8 / iPhone 5S适配
-###这边有个登陆,如果你们想测试的话,可以用这个账号,
+###CHS
+####Top 后台 Swift版本
+####Ios 8 / iPhone 5S适配
+####这边有个登陆,如果你们想测试的话,可以用这个账号
 账号:18868879362
 密码:420562
+
+###EN
+####if you want to test it, you can use this account
+Mobile Phone:18868879362
+Password:420562
 
 ####LaunchImage
 ![LaunchImage](http://woowen.qiniudn.com/Top4swiftLaunchImage.png)
