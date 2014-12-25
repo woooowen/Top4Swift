@@ -38,3 +38,7 @@ Password:123456
   * 搜索
   * 分类Nav
   * collectionView布局
+
+###LICENSE
+Released under MIT by, and copyright 2014, @Woowen.
+  
