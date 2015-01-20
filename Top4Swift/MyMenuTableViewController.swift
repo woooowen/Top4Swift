@@ -51,7 +51,7 @@ class MyMenuTableViewController: UITableViewController {
         if (cell == nil) {
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "CELL")
             cell!.backgroundColor = UIColor.clearColor()
-            cell!.textLabel.textColor = UIColor.darkGrayColor()
+            cell!.textLabel!.textColor = UIColor.darkGrayColor()
             let selectedBackgroundView = UIView(frame: CGRectMake(0, 0, cell!.frame.size.width, cell!.frame.size.height))
             selectedBackgroundView.backgroundColor = UIColor.grayColor().colorWithAlphaComponent(0.2)
             cell!.selectedBackgroundView = selectedBackgroundView
@@ -70,7 +70,7 @@ class MyMenuTableViewController: UITableViewController {
             if i == 3{
                 self.str = "达人池子-已看过"
             }
-            cell?.textLabel.text = self.str
+            cell?.textLabel!.text = self.str
         }
         
         return cell!
